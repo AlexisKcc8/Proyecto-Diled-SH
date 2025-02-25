@@ -1,0 +1,12 @@
+---
+// Definir props
+interface Props {
+  class: string;
+}
+
+const { class: myClass } = Astro.props;
+---
+
+<section class=` laptop:w-[80%] ${myClass}`>
+  <slot />
+</section>
