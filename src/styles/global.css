@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@theme {
+  /* NUESTRA PALETA DE COLORES */
+  --color-diled-50: #fffaec;
+  --color-diled-100: #fff3d3;
+  --color-diled-200: #ffe3a5;
+  --color-diled-300: #ffce6d;
+  --color-diled-400: #ffad32;
+  --color-diled-500: #ff920a;
+  --color-diled-600: #ff7a00;
+  --color-diled-700: #cc5802;
+  --color-diled-800: #a1440b;
+  --color-diled-900: #823a0c;
+  --color-diled-950: #461b04;
+  --color-diled-gray: #676767;
+  --color-diled-gray-50: #F0F3F7;
+  /* ====================================================================== */
+
+  /* BREAKPOINTS */
+  /* ====================================================================== */
+  --breakpoint-tablet: 640px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
+  /* ====================================================================== */
+}

@@ -1,3 +1,67 @@
-<section class="bg-blue-600 text-white">
-  <h2>Issues</h2>
+---
+import ContainerCenter from "@components/ContainerCenter.astro";
+
+const problematics = [
+  {
+    titulo: "🏠 ¡Tu casa no es inteligente, es desobediente!",
+    text: "Luces encendidas todo el día, electrodomésticos consumiendo energía sin control… ¿Tu casa trabaja para ti o en tu contra?",
+    urlImg: "/img/automatizacion.jpg",
+  },
+  {
+    titulo: "💡 Iluminación que arruina el ambiente",
+    text: "Espacios oscuros cuando necesitas luz, reflejos molestos en la pantalla o una iluminación que no se ajusta a tu día… ¿Te suena familiar?",
+    urlImg: "/img/iluminacion.jpg",
+  },
+  {
+    titulo: "🔐 ¿Tu seguridad depende de la suerte?",
+    text: "Salir de casa con la incertidumbre de si dejaste puertas abiertas o sin saber qué pasa cuando no estás… ¿Qué tan seguro te sientes realmente?",
+    urlImg: "/img/seguridad.jpg",
+  },
+  {
+    titulo: "🎵 Sonido plano, aburrido y sin vida",
+    text: "Altavoces con sonido pobre, música que se corta o una acústica que no aprovecha el espacio… ¿Tu audio está a la altura de la experiencia que mereces?",
+    urlImg: "/img/audio.jpg",
+  },
+  {
+    titulo: "🎬 Cine en casa… pero sin la magia",
+    text: "Películas con mala calidad de imagen, sonido que no envuelve y un ambiente que no se siente como un cine… ¿Es realmente una experiencia inmersiva?",
+    urlImg: "/img/cinema.jpg",
+  },
+  {
+    titulo: "📹 Cámaras que no ven cuando más lo necesitas",
+    text: "Ángulos ciegos, grabaciones de mala calidad o cámaras que fallan justo cuando más las necesitas… ¿Tu sistema de vigilancia es confiable?",
+    urlImg: "/img/cctv.jpg",
+  },
+  {
+    titulo: "📶 Internet que se cae en el peor momento",
+    text: "Zonas sin señal, internet lento en el peor momento o desconexiones constantes… ¿Tu red te está saboteando?",
+    urlImg: "/img/conectividad.jpg",
+  },
+];
+---
+
+<section
+  class="w-full min-h-screen bg-diled-gray-50 laptop:flex justify-center items-center"
+>
+  <ContainerCenter class="flex flex-col laptop:flex-row">
+    <aside
+      class="sticky top-0 w-{100%} flex-1 bg-diled-gray-50 laptop:w-{50%} laptop:h-[100vh]"
+    >
+      <img
+        src="./logo-diled.png"
+        alt="logo-diled"
+        class="w-full h-full object-cover"
+      />
+    </aside>
+    <aside class="flex-1 laptop:w-{50%}">
+      {
+        problematics.map((problematic) => (
+          <div class="flex flex-col items-center justify-center p-2 h-[50vh] laptop:h-[100vh] laptop:justify-center laptop:items-start">
+            <h2>{problematic.titulo}</h2>
+            <p>{problematic.text}</p>
+          </div>
+        ))
+      }
+    </aside>
+  </ContainerCenter>
 </section>
