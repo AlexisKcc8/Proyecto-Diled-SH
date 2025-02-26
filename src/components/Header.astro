@@ -1,9 +1,32 @@
-<header class="flex justify-between items-center">
-  <h1>Diled - Smart Home</h1>
-  <nav>
-    <ul class="flex gap-4">
-      <li><a href="#">facebook</a></li>
-      <li><a href="#">instagram</a></li>
-    </ul>
-  </nav>
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo-diled.png";
+import { Icon } from "astro-icon/components";
+import ContainerCenter from "./ContainerCenter.astro";
+---
+
+<header class="flex h-20 justify-center w-full">
+  <ContainerCenter class="flex justify-between">
+    <Image
+      src={Logo}
+      alt="Logo-Diled"
+      class="h-full w-56 object-cover animate-fade-down"
+    />
+    <nav class="w-full h-full flex items-center justify-end">
+      <ul class="flex gap-4">
+        <li>
+          <a
+            href="https://www.facebook.com/profile.php?id=100025791056439"
+            target="_blank"
+            ><Icon name="facebook" class="text-diled-gray h-9 w-9" /></a
+          >
+        </li>
+        <li>
+          <a href="https://www.instagram.com/diled_smart_home/" target="_blank"
+            ><Icon name="instagram" class="text-diled-gray h-9 w-9" /></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </ContainerCenter>
 </header>
