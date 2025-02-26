@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tailwindcss-animated";
 
 @theme {
   /* NUESTRA PALETA DE COLORES */
@@ -12,9 +13,10 @@
   --color-diled-700: #cc5802;
   --color-diled-800: #a1440b;
   --color-diled-900: #823a0c;
+  --color-diled-carrot: #e58f23;
   --color-diled-950: #461b04;
-  --color-diled-gray: #676767;
-  --color-diled-gray-50: #F0F3F7;
+  --color-diled-gray: #3c3f4a;
+  --color-diled-gray-50: #f0f3f7;
   /* ====================================================================== */
 
   /* BREAKPOINTS */
@@ -23,4 +25,17 @@
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1280px;
   /* ====================================================================== */
+
+  --animate-fade-up-35: fade-up-35 0.5s ease-out;
+
+  @keyframes fade-up-35 {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 0.35;
+      transform: translateY(0);
+    }
+  }
 }
