@@ -10,6 +10,7 @@ import "@styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta
       name="google-site-verification"
       content="2IYFmQ6DR-zpbLsNpMWAZL0ukBhgdKrxM3mw9lIvAw0"
@@ -17,11 +18,13 @@ import "@styles/global.css";
     <title>Diled - Smart Home</title>
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="grid grid-rows-[auto_1fr_auto] min-h-dvh">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 
