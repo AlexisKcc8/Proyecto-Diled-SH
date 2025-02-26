@@ -40,28 +40,103 @@ const problematics = [
 ];
 ---
 
-<section
-  class="w-full min-h-screen bg-diled-gray-50 laptop:flex justify-center items-center"
->
+<section class="w-full min-h-screen laptop:flex justify-center items-center">
   <ContainerCenter class="flex flex-col laptop:flex-row">
     <aside
-      class="sticky top-0 w-{100%} flex-1 bg-diled-gray-50 laptop:w-{50%} laptop:h-[100vh]"
+      class="sticky z-30 bg-white top-0 w-{100%} h-[50vh] flex justify-center items-center shadow-lg shadow-[#fff] rounded-xl p-6 laptop:flex-1 laptop:w-{50%} laptop:h-[100vh]"
     >
-      <img
-        src="./logo-diled.png"
-        alt="logo-diled"
-        class="w-full h-full object-cover"
-      />
+      <div
+        class="w-[80%] h-full rounded-2xl laptop:h-[90%] relative overflow-hidden"
+      >
+        <div class="w-full h-full overflow-hidden">
+          <img
+            id="dynamicImage"
+            src={problematics[0].urlImg}
+            alt="logo-diled"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
     </aside>
     <aside class="flex-1 laptop:w-{50%}">
       {
-        problematics.map((problematic) => (
-          <div class="flex flex-col items-center justify-center p-2 h-[50vh] laptop:h-[100vh] laptop:justify-center laptop:items-start">
-            <h2>{problematic.titulo}</h2>
-            <p>{problematic.text}</p>
+        problematics.map((problematic, index) => (
+          <div
+            class="view-timeline-issues flex flex-col items-center justify-center text-center py-2 px-6 h-[50vh] laptop:h-[100vh] laptop:items-start laptop:text-start"
+            data-img={problematic.urlImg}
+            data-num-item={index + 1}
+          >
+            <h2 class="text-3xl font-bold text-diled-600 mb-4 laptop:text-5xl">
+              {problematic.titulo}
+            </h2>
+            <p class="text-diled-gray laptop:text-xl">{problematic.text}</p>
           </div>
         ))
       }
     </aside>
   </ContainerCenter>
 </section>
+<style>
+  .fade-in {
+    animation: fadeIn 0.5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .image-container {
+    transition: opacity 0.5s;
+  }
+</style>
+<!-- Script para cambiar la imagen al hacer scroll -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".view-timeline-issues");
+
+    const imageElement = document.getElementById(
+      "dynamicImage"
+    ) as HTMLImageElement;
+
+    if (!imageElement) {
+      console.warn('Element with id "dynamicImage" not found.');
+      return; // Salir si el elemento no se encuentra
+    }
+    const mobileThreshold = 1;
+    const desktopThreshold = 0.5;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const threshold = isMobile ? mobileThreshold : desktopThreshold;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const newImg = entry.target.getAttribute("data-img");
+            const numItem = entry.target.getAttribute("data-num-item");
+            if (newImg) {
+              // Verificar que newImg no sea null
+              imageElement.classList.add("fade-in");
+              imageElement.classList.add("image-container");
+              fadeIn(imageElement, newImg);
+            }
+          }
+        });
+      },
+      { threshold }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  });
+
+  function fadeIn(element: HTMLImageElement, newImg: string) {
+    element.style.opacity = "0";
+    setTimeout(() => {
+      element.src = newImg; // Ahora TypeScript reconoce 'src'
+      element.style.opacity = "1";
+    }, 300);
+  }
+</script>
