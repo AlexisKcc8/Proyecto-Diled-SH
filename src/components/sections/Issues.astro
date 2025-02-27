@@ -43,33 +43,42 @@ const problematics = [
 <section class="w-full min-h-screen laptop:flex justify-center items-center">
   <ContainerCenter class="flex flex-col laptop:flex-row">
     <aside
-      class="sticky z-30 bg-white top-0 w-{100%} h-[50vh] flex justify-center items-center shadow-lg shadow-[#fff] rounded-xl p-6 laptop:flex-1 laptop:w-{50%} laptop:h-[100vh]"
+      class="sticky z-30 bg-white top-0 w-{100%} h-[50vh] flex justify-center items-center shadow-lg shadow-[#fff] rounded-xl p-6
+      laptop:flex-1 laptop:w-{50%} laptop:h-[100vh]"
     >
       <div
+        id="container-dinamic-image"
         class="w-[80%] h-full rounded-2xl laptop:h-[90%] relative overflow-hidden"
       >
-        <div class="w-full h-full overflow-hidden">
-          <img
-            id="dynamicImage"
-            src={problematics[0].urlImg}
-            alt="logo-diled"
-            class="w-full h-full object-cover"
-          />
-        </div>
+        <img
+          id="dynamicImage"
+          src={problematics[0].urlImg}
+          alt="logo-diled"
+          class="w-full h-full object-cover"
+        />
       </div>
     </aside>
     <aside class="flex-1 laptop:w-{50%}">
       {
-        problematics.map((problematic, index) => (
+        problematics.map((problematic) => (
           <div
             class="view-timeline-issues flex flex-col items-center justify-center text-center py-2 px-6 h-[50vh] laptop:h-[100vh] laptop:items-start laptop:text-start"
             data-img={problematic.urlImg}
-            data-num-item={index + 1}
           >
-            <h2 class="text-3xl font-bold text-diled-600 mb-4 laptop:text-5xl">
+            <h2
+              class="text-3xl font-bold text-diled-600 mb-4 laptop:text-5xl"
+              data-aos="fade"
+              data-aos-duration="500"
+            >
               {problematic.titulo}
             </h2>
-            <p class="text-diled-gray laptop:text-xl">{problematic.text}</p>
+            <p
+              class="text-diled-gray laptop:text-xl"
+              data-aos="fade"
+              data-aos-duration="500"
+            >
+              {problematic.text}
+            </p>
           </div>
         ))
       }
@@ -89,13 +98,13 @@ const problematics = [
       opacity: 1;
     }
   }
-  .image-container {
-    transition: opacity 0.5s;
-  }
 </style>
 <!-- Script para cambiar la imagen al hacer scroll -->
+
 <script>
+  import { initAOS } from "@scripts/aos";
   document.addEventListener("DOMContentLoaded", () => {
+    initAOS();
     const sections = document.querySelectorAll(".view-timeline-issues");
 
     const imageElement = document.getElementById(
@@ -107,7 +116,7 @@ const problematics = [
       return; // Salir si el elemento no se encuentra
     }
     const mobileThreshold = 1;
-    const desktopThreshold = 0.5;
+    const desktopThreshold = 0.8;
 
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const threshold = isMobile ? mobileThreshold : desktopThreshold;
@@ -116,11 +125,10 @@ const problematics = [
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const newImg = entry.target.getAttribute("data-img");
-            const numItem = entry.target.getAttribute("data-num-item");
             if (newImg) {
               // Verificar que newImg no sea null
               imageElement.classList.add("fade-in");
-              imageElement.classList.add("image-container");
+              imageElement.classList.add("transition-opacity", "duration-500");
               fadeIn(imageElement, newImg);
             }
           }
@@ -135,7 +143,7 @@ const problematics = [
   function fadeIn(element: HTMLImageElement, newImg: string) {
     element.style.opacity = "0";
     setTimeout(() => {
-      element.src = newImg; // Ahora TypeScript reconoce 'src'
+      element.src = newImg;
       element.style.opacity = "1";
     }, 300);
   }
