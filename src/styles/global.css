@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* NUESTRA PALETA DE COLORES */
@@ -18,7 +19,7 @@
   --color-diled-gray-texts: #3C3F4A;
   --color-diled-gray-50: #F0F3F7;
   --color-diled-gray: #3c3f4a;
- 
+
   /* ====================================================================== */
 
   /* BREAKPOINTS */
@@ -35,6 +36,7 @@
       opacity: 0;
       transform: translateY(10px);
     }
+
     100% {
       opacity: 0.35;
       transform: translateY(0);
