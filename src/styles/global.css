@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
-@plugin "@tailwindcss/typography";
 
 @theme {
   /* NUESTRA PALETA DE COLORES */
@@ -11,13 +10,13 @@
   --color-diled-400: #ffad32;
   --color-diled-500: #ff920a;
   --color-diled-600: #ff7a00;
-  --color-diled-700: #cc5802;
+  --color-diled-700: #ca6915;
   --color-diled-800: #a1440b;
   --color-diled-900: #823a0c;
   --color-diled-carrot: #e58f23;
   --color-diled-950: #461b04;
-  --color-diled-gray-texts: #3C3F4A;
-  --color-diled-gray-50: #F0F3F7;
+  --color-diled-gray-texts: #3c3f4a;
+  --color-diled-gray-50: #f0f3f7;
   --color-diled-gray: #3c3f4a;
 
   /* ====================================================================== */
@@ -36,10 +35,23 @@
       opacity: 0;
       transform: translateY(10px);
     }
-
     100% {
       opacity: 0.35;
       transform: translateY(0);
     }
+  }
+}
+
+.group {
+  will-change: transform;
+  animation: scrolling 25s linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
