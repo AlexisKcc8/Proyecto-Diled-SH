@@ -1,0 +1,46 @@
+---
+import { twMerge } from "tailwind-merge";
+
+const { dataReview } = Astro.props;
+---
+
+<div
+  class:list={twMerge(
+    "flex flex-col h-full bg-white rounded-[1rem] shadow-md p-6 border  border-gray-200",
+    dataReview.rotation ? dataReview.rotation : ""
+  )}
+  data-aos="fade-up"
+  data-aos-duration="900"
+>
+  <div
+    class="flex-grow mb-6 flex flex-col items-center justify-center text-start"
+  >
+    <p class="text-gray-700 text-[1rem] prose break-words w-full">
+      {dataReview.review}
+    </p>
+  </div>
+  <div class="w-full flex justify-start items-center my-2">
+    <p>⭐⭐⭐⭐⭐</p>
+  </div>
+
+  {/* Avatar and user info at the bottom */}
+  <div class="flex items-center mt-auto">
+    <div
+      class="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border border-diled-600"
+    >
+      <img
+        src={dataReview.avatar || "/placeholder.svg"}
+        alt={`Avatar de ${dataReview.name}`}
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="ml-3 text-start">
+      <h4 class="text-[1rem] font-medium text-diled-carrot">
+        {dataReview.name}
+      </h4>
+      <p class="text-[.8rem] text-diled-gray-texts">
+        {dataReview.charge}
+      </p>
+    </div>
+  </div>
+</div>
