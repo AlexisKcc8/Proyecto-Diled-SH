@@ -1,6 +1,8 @@
 ---
 import ContainerCenter from "@components/ContainerCenter.astro";
 
+
+
 const problematics = [
   {
     titulo: "🏠 ¡Tu casa no es inteligente, es desobediente!",
@@ -40,30 +42,37 @@ const problematics = [
 ];
 ---
 
-<section class="w-full min-h-screen laptop:flex justify-center items-center">
-  <ContainerCenter class="flex flex-col laptop:flex-row">
+<section class="relative flex justify-center items-center space-y-10 p-5 laptop:flex-row laptop:space-y-0 laptop:space-x-10">
+  <ContainerCenter class="laptop:flex">
+    <!-- Aside con la imagen fija -->
     <aside
-      class="sticky z-30 bg-white top-0 w-{100%} h-[50vh] flex justify-center items-center shadow-lg shadow-[#fff] rounded-xl p-6
-      laptop:flex-1 laptop:w-{50%} laptop:h-[100vh]"
+      class="sticky top-0 left-0 bg-white z-30 p-4 w-full h-[50vh] flex justify-center items-center shadow-lg shadow-[#fff]
+      laptop:h-screen  overflow-hidden"
     >
-      <div
-        id="container-dinamic-image"
-        class="w-[80%] h-full rounded-2xl laptop:h-[90%] relative overflow-hidden"
-      >
+      {problematics.map((problematic, index) => (
         <img
-          id="dynamicImage"
-          src={problematics[0].urlImg}
-          alt="logo-diled"
-          class="w-full h-full object-cover"
+          src={problematic.urlImg}
+          alt="Problema actual"
+          class={`absolute top-0 left-0 w-full h-full object-cover border
+          laptop:w-full laptop:h-[90vh] laptop:object-contain transition-all duration-700 ease-in-out
+          ${index === 0 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          data-index={index}
         />
-      </div>
+      ))}
     </aside>
-    <aside class="flex-1 laptop:w-{50%}">
-      {
-        problematics.map((problematic) => (
+
+    <!-- Sección de problemáticas -->
+    <aside class="space-y-24 p-10 w-full">
+      {problematics.map((problematic) => (
+        <div class="relative">
           <div
-            class="view-timeline-issues flex flex-col items-center justify-center text-center py-2 px-6 h-[50vh] laptop:h-[100vh] laptop:items-start laptop:text-start"
+            class="watched h-64 w-64 bg-gray-200 opacity-0 laptop:absolute top-0 left-0 z-20"
             data-img={problematic.urlImg}
+          ></div>
+
+          <div
+            class="z-10 flex flex-col items-center justify-center text-center py-2 px-4   
+              laptop:h-[90vh] laptop:items-start laptop:text-start"
           >
             <h2
               class="text-3xl font-bold text-diled-600 mb-4 laptop:text-5xl"
@@ -73,78 +82,18 @@ const problematics = [
               {problematic.titulo}
             </h2>
             <p
-              class="text-diled-gray laptop:text-xl"
+              class="text-diled-gray text-[1rem] prose laptop:text-xl max-w-full border"
               data-aos="fade"
               data-aos-duration="500"
             >
               {problematic.text}
             </p>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </aside>
   </ContainerCenter>
+
+  <!-- Ejecuta el script en el cliente -->
+  <script src="@scripts/intersectionObserver.ts"></script>
 </section>
-<style>
-  .fade-in {
-    animation: fadeIn 0.5s;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-</style>
-<!-- Script para cambiar la imagen al hacer scroll -->
-
-<script>
-  import { initAOS } from "@scripts/aos";
-  document.addEventListener("DOMContentLoaded", () => {
-    initAOS();
-    const sections = document.querySelectorAll(".view-timeline-issues");
-
-    const imageElement = document.getElementById(
-      "dynamicImage"
-    ) as HTMLImageElement;
-
-    if (!imageElement) {
-      console.warn('Element with id "dynamicImage" not found.');
-      return; // Salir si el elemento no se encuentra
-    }
-    const mobileThreshold = 1;
-    const desktopThreshold = 0.8;
-
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const threshold = isMobile ? mobileThreshold : desktopThreshold;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const newImg = entry.target.getAttribute("data-img");
-            if (newImg) {
-              // Verificar que newImg no sea null
-              imageElement.classList.add("fade-in");
-              imageElement.classList.add("transition-opacity", "duration-500");
-              fadeIn(imageElement, newImg);
-            }
-          }
-        });
-      },
-      { threshold }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-  });
-
-  function fadeIn(element: HTMLImageElement, newImg: string) {
-    element.style.opacity = "0";
-    setTimeout(() => {
-      element.src = newImg;
-      element.style.opacity = "1";
-    }, 300);
-  }
-</script>

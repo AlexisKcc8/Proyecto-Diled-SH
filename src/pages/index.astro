@@ -5,12 +5,20 @@ import Hero from "@components/sections/Hero.astro";
 import Issues from "@components/sections/Issues.astro";
 import Reviews from "@components/sections/Reviews.astro";
 import Solutions from "@components/sections/Solutions.astro";
+
+
 ---
 
 <Layout title="Diled - Smart Home ¡Tu solución!">
-  <!-- <Welcome /> -->
   <Hero />
   <Issues />
   <Solutions />
   <Reviews />
 </Layout>
+
+<script>
+  import { initAOS } from "@scripts/aos";
+  document.addEventListener("DOMContentLoaded", () => {
+    initAOS();
+  });
+</script>
