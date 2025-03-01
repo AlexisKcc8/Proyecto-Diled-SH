@@ -58,13 +58,9 @@ const customerReviews = [
 ---
 
 <section
-  class="w-full min-h-[100vh] overflow-hidden relative text-black bg-diled-gray-50 flex justify-center"
+  class="w-full min-h-[100vh] overflow-hidden relative text-white flex justify-center"
 >
-  <div
-    class="absolute top-[-.3rem] left-0 w-full h-[12rem] z-10 laptop:-[-2.5rem]"
-  >
-    <Image src={wave} alt="wave effect" class="h-full w-full object-cover" />
-  </div>
+  
   <ContainerCenter
     class="flex flex-col items-center justify-center z-50 text-center py-8 px-6 laptop:px-0"
   >
@@ -73,7 +69,7 @@ const customerReviews = [
       data-aos="fade"
       data-aos-duration="900"
     >
-      ¡Estas en una buena <span class="text-diled-carrot">compania</span>!
+      ¡Estas en una buena <span class="text-diled-600">compania</span>!
     </h2>
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {customerReviews.map((review) => <CardReview dataReview={review} />)}

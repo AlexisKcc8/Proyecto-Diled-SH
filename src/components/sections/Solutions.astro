@@ -3,11 +3,11 @@ import ContainerCenter from "@components/ContainerCenter.astro";
 ---
 
 <section
-  class="min-h-screen flex items-center justify-center bg-gradient-to-b opacity-90 from-diled-100 to-white px-6 laptop:px-0 py-6"
+  class="min-h-screen flex items-center justify-center  px-6 laptop:px-0 py-6"
 >
   <ContainerCenter class="flex flex-col gap-6 laptop:gap-10">
-    <h2 class="text-2xl laptop:text-3xl text-diled-700 font-semibold">
-      Transformamos tu Espacio con Tecnología Inteligente
+    <h2 class="text-2xl laptop:text-3xl text-white font-bold">
+      Transformamos tu Espacio con <span class="text-diled-600">Tecnología</span> Inteligente
     </h2>
     <div class="grid gap-4">
       <div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
@@ -61,16 +61,21 @@ import ContainerCenter from "@components/ContainerCenter.astro";
           </p>
         </div>
         <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center rounded-2xl p-5 gap-4"
+          class="h-96 text-center flex flex-col items-center justify-end rounded-2xl p-5 gap-4 relative overflow-hidden"
           data-aos="zoom-in"
           data-aos-duration="300"
           data-aos-delay="400"
-        >
-          <p class="text-xl font-bold">Cinema</p>
-          <p class="text-base">
+        > 
+          <img src="/src/assets/bg-cinema.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover -z-10 grayscale-50" />
+          <div class="absolute top-0 left-0 bg-gradient-to-b from-slate-950/10 to-slate-950/100 w-full h-full justify-center items-center flex"></div>
+
+          <p class="text-xl font-bold text-diled-600 z-40">Cinema</p>
+          <p class="text-base text-diled-50 z-40">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
+
+          
         </div>
       </div>
 
