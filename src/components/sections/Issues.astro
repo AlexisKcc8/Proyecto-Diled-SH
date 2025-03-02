@@ -42,14 +42,15 @@ const problematics = [
 ];
 ---
 
-<section class="relative flex justify-center items-center space-y-10 p-5 laptop:flex-row laptop:space-y-0 laptop:space-x-10">
+<section class="relative flex justify-center items-center space-y-10 p-5 bg-slate-950 laptop:flex-row laptop:space-y-0 laptop:space-x-10">
   <ContainerCenter class="laptop:flex">
     <!-- Aside con la imagen fija -->
     <aside
-      class="sticky top-0 left-0  z-30 p-4 w-full h-[50vh] flex justify-center items-center 
+      class="sticky top-0 left-0  z-30 p-4 w-full h-[50vh]  flex justify-center items-center 
       laptop:h-screen  overflow-hidden"
     >
-      {problematics.map((problematic, index) => (
+      <div class="relative w-full h-full bg-slate-950">
+        {problematics.map((problematic, index) => (
         <img
           src={problematic.urlImg}
           alt="Problema actual"
@@ -59,6 +60,8 @@ const problematics = [
           data-index={index}
         />
       ))}
+      
+      </div>
     </aside>
 
     <!-- Sección de problemáticas -->
