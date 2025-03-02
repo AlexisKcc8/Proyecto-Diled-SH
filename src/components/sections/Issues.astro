@@ -5,56 +5,59 @@ import ContainerCenter from "@components/ContainerCenter.astro";
 
 const problematics = [
   {
-    titulo: "🏠 ¡Tu casa no es inteligente, es desobediente!",
-    text: "Luces encendidas todo el día, electrodomésticos consumiendo energía sin control… ¿Tu casa trabaja para ti o en tu contra?",
+    titulo: "🏠 ¿Tu casa hace tu vida más fácil… o más difícil?",
+    text: "Luces encendidas sin motivo, aparatos gastando energía sin control. ¿No debería tu hogar adaptarse a ti?",
     urlImg: "/img/automatizacion.png",
   },
   {
-    titulo: "💡 Iluminación que arruina el ambiente",
-    text: "Espacios oscuros cuando necesitas luz, reflejos molestos en la pantalla o una iluminación que no se ajusta a tu día… ¿Te suena familiar?",
+    titulo: "💡 ¿Demasiada luz? ¿Muy poca? Nunca es la correcta.",
+    text: "Oscuridad cuando trabajas, reflejos molestos en la tele. ¿Y si tu iluminación supiera exactamente lo que necesitas?",
     urlImg: "/img/iluminacion.png",
   },
   {
     titulo: "🔐 ¿Tu seguridad depende de la suerte?",
-    text: "Salir de casa con la incertidumbre de si dejaste puertas abiertas o sin saber qué pasa cuando no estás… ¿Qué tan seguro te sientes realmente?",
+    text: "Salir y preguntarte si cerraste bien, cámaras que no sirven cuando pasa algo. ¿No prefieres tranquilidad real?",
     urlImg: "/img/seguridad.png",
   },
   {
-    titulo: "🎵 Sonido plano, aburrido y sin vida",
-    text: "Altavoces con sonido pobre, música que se corta o una acústica que no aprovecha el espacio… ¿Tu audio está a la altura de la experiencia que mereces?",
+    titulo: "🎵 ¿Tu música tiene vida… o es puro ruido?",
+    text: "Bajos débiles, sonido sin profundidad, música que se corta. ¿Así quieres disfrutar de tu espacio?",
     urlImg: "/img/audio.png",
   },
   {
-    titulo: "🎬 Cine en casa… pero sin la magia",
-    text: "Películas con mala calidad de imagen, sonido que no envuelve y un ambiente que no se siente como un cine… ¿Es realmente una experiencia inmersiva?",
+    titulo: "🎬 ¿Tu cine en casa es mágico… o solo una tele más?",
+    text: "Sonido sin fuerza, imagen borrosa, sin atmósfera envolvente. ¿No mereces una experiencia real?",
     urlImg: "/img/cinema.png",
   },
   {
-    titulo: "📹 Cámaras que no ven cuando más lo necesitas",
-    text: "Ángulos ciegos, grabaciones de mala calidad o cámaras que fallan justo cuando más las necesitas… ¿Tu sistema de vigilancia es confiable?",
+    titulo: "📹 ¿Tus cámaras ven todo… o solo lo fácil?",
+    text: "Ángulos ciegos, mala calidad, sin pruebas cuando las necesitas. ¿Es eso lo que llamas protección?",
     urlImg: "/img/cctv.png",
   },
   {
-    titulo: "📶 Internet que se cae en el peor momento",
-    text: "Zonas sin señal, internet lento en el peor momento o desconexiones constantes… ¿Tu red te está saboteando?",
+    titulo: "📶 ¿Internet rápido? Ojalá...",
+    text: "Reuniones que se congelan, WiFi que no llega a todos lados. ¿Te suena conocido?",
     urlImg: "/img/conectividad.png",
   },
 ];
+
+
+
 ---
 
 <section class="relative flex justify-center items-center space-y-10 p-5 bg-slate-950 laptop:flex-row laptop:space-y-0 laptop:space-x-10">
   <ContainerCenter class="laptop:flex">
     <!-- Aside con la imagen fija -->
     <aside
-      class="sticky top-0 left-0  z-30 p-4 w-full h-[50vh]  flex justify-center items-center 
+      class="sticky top-0 left-0  z-30 p-4 w-full h-[50vh] bg-slate-950 flex justify-center items-center 
       laptop:h-screen  overflow-hidden"
     >
-      <div class="relative w-full h-full bg-slate-950">
+      <div class="relative w-full h-full  ">
         {problematics.map((problematic, index) => (
         <img
           src={problematic.urlImg}
           alt="Problema actual"
-          class={`absolute top-0 left-0 w-full h-full object-cover drop-shadow-[0_5px_10px_rgba(255,255,255,0.2)] 
+          class={`absolute top-0 left-0 w-full h-full object-cover drop-shadow-[0_5px_10px_rgba(255,255,255,0.4)] 
           laptop:w-full laptop:h-[90vh] laptop:object-contain transition-all duration-700 ease-in-out
           ${index === 0 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           data-index={index}
@@ -65,7 +68,7 @@ const problematics = [
     </aside>
 
     <!-- Sección de problemáticas -->
-    <aside class="space-y-24 p-10 w-full">
+    <aside class="space-y-24 p-2 w-full">
       {problematics.map((problematic) => (
         <div class="relative">
           <div
@@ -74,11 +77,11 @@ const problematics = [
           ></div>
 
           <div
-            class="z-10 flex flex-col items-center justify-center text-center py-2 px-4   
+            class="z-10 flex flex-col items-center justify-center text-center   
               laptop:h-[90vh] laptop:items-start laptop:text-start"
           >
             <h2
-              class="text-3xl font-bold text-diled-600 mb-4 laptop:text-5xl"
+              class="text-4xl  font-bold prose text-diled-600 mb-4 laptop:text-5xl"
               data-aos="fade"
               data-aos-duration="500"
             >
