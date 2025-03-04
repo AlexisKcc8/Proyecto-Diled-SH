@@ -48,9 +48,9 @@ const problematics = [
 
     <aside
       class="sticky top-0 left-0 z-30 w-[100%] h-[50vh] flex justify-center items-center
-      laptop:h-screen overflow-hidden drop-shadow-[0_50px_20px_rgba(2,6,24,1)]"
+      laptop:h-screen overflow-hidden drop-shadow-[0_40px_20px_rgba(2,6,24,1)] "
     >
-      <div class="relative w-full h-full">
+      <div class="relative w-full h-full py-8 ">
         <div
           class="bg-gradient-to-b from-slate-950 via-slate-950 from-45% via-80% to-white to-40% w-full h-screen justify-center items-center flex top-0 left-0 z-20 py-4 laptop:hidden"
         >
@@ -60,7 +60,7 @@ const problematics = [
             <img
               src={problematic.urlImg}
               alt="Problema actual"
-              class={`absolute top-0 left-0 w-full h-full object-contain drop-shadow-[0_5px_10px_rgba(255,255,255,0.4)] 
+              class={`absolute top-0 left-0 w-full h-[95%] object-contain drop-shadow-[0_5px_10px_rgba(255,255,255,0.4)]
           laptop:w-full laptop:h-[90vh] laptop:object-contain transition-all duration-700 ease-in-out
           ${index === 0 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               data-index={index}
