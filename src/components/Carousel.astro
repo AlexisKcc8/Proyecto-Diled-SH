@@ -1,0 +1,54 @@
+---
+import CardSolution from "./CardSolution.astro";
+
+// Props para hacer el componente reutilizable
+const { projects = [], carouselId } = Astro.props;
+const hasCards = Astro.slots.cards;
+---
+<section class="relative w-full overflow-hidden mx-0">
+  <!-- Contenedor de las cards con scroll horizontal -->
+  <div class="relative overflow-hidden">
+    <div 
+      class="flex gap-6 overflow-x-scroll snap-x scroll-smooth no-scrollbar px-4 py-6" 
+      data-carousel={carouselId}
+    >
+      <slot />
+    </div>
+  </div>
+
+  <!-- Botones de navegación con `data-carousel` -->
+  <button data-prev={carouselId} class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 text-white p-3 rounded-full shadow-lg">
+    ⬅️
+  </button>
+  <button data-next={carouselId} class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 text-white p-3 rounded-full shadow-lg">
+    ➡️
+  </button>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  document.querySelectorAll("[data-prev]").forEach((btn) => {
+    btn.addEventListener("click", () => scrollTo(btn.dataset.prev, "prev"));
+  });
+
+  document.querySelectorAll("[data-next]").forEach((btn) => {
+    btn.addEventListener("click", () => scrollTo(btn.dataset.next, "next"));
+  });
+
+  function scrollTo(carouselId:string, direction:string) {
+    const container = document.querySelector(`[data-carousel='${carouselId}']`);
+    if (!container) return;
+
+    const scrollAmount = container.firstElementChild.clientWidth + 24; // Ancho de la tarjeta + gap
+    container.scrollBy({ left: direction === 'next' ? scrollAmount : -scrollAmount });
+  }
+</script>
