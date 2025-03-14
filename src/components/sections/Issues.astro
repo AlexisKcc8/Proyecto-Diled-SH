@@ -3,56 +3,59 @@ import ContainerCenter from "@components/ContainerCenter.astro";
 
 const problematics = [
   {
-    titulo: "🏠 ¿Tu casa hace tu vida más fácil… o más difícil?",
-    text: "Luces encendidas sin motivo, aparatos gastando energía sin control. ¿No debería tu hogar adaptarse a ti?",
+    titulo: "🎬 ¿Tu cine en casa es una experiencia mágica... o solo una tele más?",
+    text: "Vive la experiencia del cine sin salir de casa. Disfruta sonido envolvente Dolby Atmos y una pantalla de alta resolución con calidad cinematográfica. Siente cómo el audio se mueve a tu alrededor y transforma cada película en algo inolvidable",
     urlImg: "/img/automatizacion.png",
   },
   {
-    titulo: "💡 ¿Demasiada luz? ¿Muy poca? Nunca es la correcta.",
-    text: "Oscuridad cuando trabajas, reflejos molestos en la tele. ¿Y si tu iluminación supiera exactamente lo que necesitas?",
+    titulo: "🔊 ¿Tu música no tiene vida? ¿Quisieras vivir una verdadera experiencia de audio en tu hogar ?",
+    text: "Con un sistema de audio multizona, puedes llevar la experiencia de la música en tu hogar inteligente al siguiente nivel, disfrutando de un control total y una integración perfecta con otros dispositivos.",
     urlImg: "/img/iluminacion.png",
   },
   {
-    titulo: "🔐 ¿Tu seguridad depende de la suerte?",
-    text: "Salir y preguntarte si cerraste bien, cámaras que no sirven cuando pasa algo. ¿No prefieres tranquilidad real?",
+    titulo: "🔐 ¿La seguridad en tu Hogar depende de la Suerte? ",
+    text: "Protege lo que más importa con una solución de seguridad completa: cámaras con audio integrado, alarma automonitoreada y videoportero con control desde cualquier lugar. Todo en una sola app.",
     urlImg: "/img/seguridad.png",
   },
   {
-    titulo: "🎵 ¿Tu música tiene vida… o es puro ruido?",
-    text: "Bajos débiles, sonido sin profundidad, música que se corta. ¿Así quieres disfrutar de tu espacio?",
+    titulo: "🛜 ¿Internet rápido? Ojalá…",
+    text: "Reuniones que se congelan, WiFi que no llega a todos lados. ¿Te suena conocido?",
     urlImg: "/img/audio.png",
   },
   {
-    titulo: "🎬 ¿Tu cine en casa es mágico… o solo una tele más?",
-    text: "Sonido sin fuerza, imagen borrosa, sin atmósfera envolvente. ¿No mereces una experiencia real?",
+    titulo: "🏡 Integración y Confort",
+    text: "Convierte tu espacio en un lugar que se adapte a ti. Controla la iluminación, el clima y el sonido con un solo toque y disfruta de la comodidad sin esfuerzo. La tecnología trabaja para ti, para que solo te preocupes por disfrutar. 🚀",
     urlImg: "/img/cinema.png",
   },
-  {
-    titulo: "📹 ¿Tus cámaras ven todo… o solo lo fácil?",
-    text: "Ángulos ciegos, mala calidad, sin pruebas cuando las necesitas. ¿Es eso lo que llamas protección?",
-    urlImg: "/img/cctv.png",
-  },
-  {
-    titulo: "📶 ¿Internet rápido? Ojalá...",
-    text: "Reuniones que se congelan, WiFi que no llega a todos lados. ¿Te suena conocido?",
-    urlImg: "/img/conectividad.png",
-  },
+
 ];
 ---
 
 <section
-  class="relative flex justify-center items-center space-y-10 bg-slate-950 laptop:flex-row laptop:space-y-0 laptop:space-x-10"
+  class="relative flex justify-center items-center space-y-10  laptop:flex-row laptop:space-y-0 laptop:space-x-10"
 >
-  <ContainerCenter class="laptop:flex">
+  <ContainerCenter >
     <!-- Aside con la imagen fija -->
-
-    <aside
-      class="sticky top-0 left-0 z-30 w-[100%] h-[50vh] flex justify-center items-center
-      laptop:h-screen overflow-hidden drop-shadow-[0_50px_20px_rgba(2,6,24,1)]"
+     <header class="text-center flex justify-center items-center">
+      <h2
+      class="font-bold text-3xl my-8 max-w-[90%] laptop:text-5xl"
+      data-aos="fade"
+      data-aos-duration="900"
     >
-      <div class="relative w-full h-full">
+      Transformamos tu Espacio con <span class="text-diled-600">Tecnología</span
+      >
+      Inteligente
+    </h2>
+     </header>
+
+     <section class="laptop:flex ">
+      <aside
+      class="sticky top-0 left-0 z-30 w-[100%] h-[50vh] flex justify-center items-center
+      laptop:h-screen overflow-hidden drop-shadow-[0_40px_20px_rgba(255,255,255,1)] "
+    >
+      <div class="relative w-full h-full py-8 ">
         <div
-          class="bg-gradient-to-b from-slate-950 via-slate-950 from-45% via-80% to-white to-40% w-full h-screen justify-center items-center flex top-0 left-0 z-20 py-4 laptop:hidden"
+          class="bg-white from-45% via-80% to-white to-40% w-full h-screen justify-center items-center flex top-0 left-0 z-20 py-4 laptop:hidden"
         >
         </div>
         {
@@ -60,7 +63,7 @@ const problematics = [
             <img
               src={problematic.urlImg}
               alt="Problema actual"
-              class={`absolute top-0 left-0 w-full h-full object-contain drop-shadow-[0_5px_10px_rgba(255,255,255,0.4)] 
+              class={`absolute top-0 left-0 w-full h-[95%] object-contain 
           laptop:w-full laptop:h-[90vh] laptop:object-contain transition-all duration-700 ease-in-out
           ${index === 0 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               data-index={index}
@@ -85,28 +88,27 @@ const problematics = [
               laptop:h-[90vh] laptop:items-start laptop:text-start"
             >
               <h2
-                class="text-4xl  font-bold prose text-diled-600 mb-4 laptop:text-5xl"
+                class="text-2xl  font-bold prose mb-4 text-diled-gray laptop:text-4xl"
                 data-aos="fade"
                 data-aos-duration="500"
               >
                 {problematic.titulo}
               </h2>
               <p
-                class="text-diled-50 text-[1rem] prose laptop:text-xl max-w-full"
+                class="text-diled-gray text-[.8rem] prose laptop:text-[1rem] max-w-full"
                 data-aos="fade"
                 data-aos-duration="500"
               >
                 {problematic.text}
               </p>
             </div>
-            <div class="absolute bottom-0 left-0 z-10 h-[50%] w-full">
-              <div class="absolute left-[50%] top-[60%] h-[300px] w-[300px] laptop:h-[500px] laptop:w-[500px] -translate-x-[50%] -translate-y-[50%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-40 blur-[100px]" />
-            </div>
+            
           </div>
         ))
       }
     </aside>
+     </section>
   </ContainerCenter>
   <!-- Ejecuta el script en el cliente -->
-  <script src="@scripts/intersectionObserver.ts"></script>
+  <script  src="@scripts/intersectionObserver.ts"></script>
 </section>

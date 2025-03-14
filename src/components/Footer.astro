@@ -4,7 +4,7 @@ import ContainerCenter from "./ContainerCenter.astro";
 ---
 
 <footer
-  class="relative text-white flex justify-center items-center px-6 laptop:px-0 overflow-hidden"
+  class="relative text-white flex justify-center items-center px-6 laptop:px-0 overflow-hidden bg-slate-950"
 >
   <div class="absolute top-0 left-0 z-10 h-full w-full">
     <div
@@ -13,14 +13,14 @@ import ContainerCenter from "./ContainerCenter.astro";
     </div>
   </div>
   <ContainerCenter
-    class="flex flex-col-reverse laptop:flex-row justify-between py-6"
+    class="flex flex-col-reverse laptop:flex-row justify-between py-12"
   >
     <aside class="flex flex-col gap-8 text-center laptop:text-left">
       <div class="border-b border-white py-2">
         <p class="text-2xl font-bold mb-6">
           Diled - Smart <span class="text-diled-600">Home</span>
         </p>
-        <ul class="flex gap-4 flex-col items-center laptop:flex-row">
+        <ul class="flex gap-4 flex-col items-center laptop:hidden">
           <li class="flex gap-2 items-center">
             <a
               href="https://www.facebook.com/profile.php?id=100025791056439"
@@ -46,8 +46,8 @@ import ContainerCenter from "./ContainerCenter.astro";
         </ul>
       </div>
       <div>
-        <p>
-          Soluciones IT | Smart Homes | Seguridad | Automatización Residencial |
+        <p class="mb-4">
+          Soluciones IT | <span class="text-diled-300">Smart Homes</span> | Seguridad | <span class="text-diled-300">Automatización Residencial</span>  |
           Conectividad.
         </p>
         <p>&copy; {new Date().getFullYear()}. Todos los derechos reservados.</p>
@@ -83,7 +83,7 @@ import ContainerCenter from "./ContainerCenter.astro";
       </section>
 
       <section
-        class="flex flex-col laptop:items-end laptop:justify-end mt-3 text-center"
+        class="flex flex-col laptop:items-end laptop:justify-end my-3 text-center"
       >
         <p class="my-3 text-diled-600 text-xl font-semibold">
           ¡Ven a visitarnos! Estamos en:
@@ -95,7 +95,7 @@ import ContainerCenter from "./ContainerCenter.astro";
           ><Icon name="maps" class="text-white w-7 h-7 laptop:w-9 laptop:h-9" />
           <span class="laptop:text-end">
             Calle 1H #176 x 14 y 16, Col. México Norte, Mérida, Yucatan 97128.
-            listos para ayudarte.</span
+            <br><strong class="text-diled-200">listos para ayudarte.</strong></span
           >
         </a>
       </section>
