@@ -1,0 +1,179 @@
+---
+import ContainerCenter from "@components/ContainerCenter.astro";
+  const client="Jorge Pérez";
+  const position="Manager AIRBNB";
+  const avatar="/logo-diled.png";
+  const review="¡Mi hogar ahora es inteligente! Control total de iluminación, seguridad y entretenimiento con un solo toque. ¡Increíble servicio!";
+---
+<section class="min-h-screen bg-white flex items-center justify-center">
+  <ContainerCenter class="relative w-full  h-[90vh] rounded-2xl overflow-hidden">
+     <!-- Sky background with gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-sky-300 to-sky-100"></div>
+    
+      <!-- White gradient overlays for diffused effect -->
+      <div class="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-white/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-white/20"></div>
+      
+      <!-- Inner edge white diffusion -->
+      <div class="inner-diffusion-left"></div>
+      <div class="inner-diffusion-right"></div>
+      
+      <!-- Bottom diffusion for borderless effect -->
+      <div class="bottom-diffusion"></div>
+      <!-- Diffused clouds positioned at the top corners -->
+      <div class="cloud cloud-1" style="top: 10%; left: 5%;"></div>
+      <div class="cloud cloud-2" style="top: 15%; left: 15%;"></div>
+      <div class="cloud cloud-3" style="top: 8%; left: 25%;"></div>
+      
+      <div class="cloud cloud-2" style="top: 12%; right: 5%;"></div>
+      <div class="cloud cloud-1" style="top: 18%; right: 15%;"></div>
+      <div class="cloud cloud-3" style="top: 6%; right: 25%;"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 h-full flex items-center justify-center laptop:justify-start laptop:pl-28 ">
+        <div class=" text-start p-6 px-8 laptop:w-[70%]">
+          <p class="text-2xl prose drop-shadow-md mb-8 font-medium laptop:text-[40px]">¡Mi hogar ahora es inteligente! Control total de iluminación, seguridad y <span class="text-blue-600">entretenimiento con un solo toque. ¡Increíble servicio!</span></p>
+          <div class="flex items-center mt-auto">
+            <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border border-[#ff7a00] ">
+              <img
+                src={avatar || "/placeholder.svg"}
+                alt={`Avatar de ${client}`}
+                class="w-full h-full object-cover"/>
+            </div>
+            <div class="ml-3 text-start">
+              <h4 class="text-[1rem] font-medium text-black">{client}</h4>
+              <p class="text-[.8rem] text-diled-gray-texts">{position}</p>
+            </div>
+          </div>
+        </div>
+  </ContainerCenter>
+</section>
+
+<style>
+    /* Diffused cloud styling */
+    .cloud {
+      position: absolute;
+      background: white;
+      border-radius: 50px;
+      filter: blur(3px);
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+    }
+    
+    .cloud::before, .cloud::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      filter: blur(1px);
+    }
+    
+    .cloud-1 {
+      width: 100px;
+      height: 30px;
+      opacity: 0.7;
+      animation: float1 15s ease-in-out infinite;
+    }
+    
+    .cloud-1::before {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      left: 15px;
+    }
+    
+    .cloud-1::after {
+      width: 40px;
+      height: 40px;
+      top: -20px;
+      left: 50px;
+    }
+    
+    .cloud-2 {
+      width: 120px;
+      height: 35px;
+      opacity: 0.65;
+      animation: float2 18s ease-in-out infinite;
+    }
+    
+    .cloud-2::before {
+      width: 60px;
+      height: 60px;
+      top: -30px;
+      left: 20px;
+    }
+    
+    .cloud-2::after {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      left: 60px;
+    }
+    
+    .cloud-3 {
+      width: 80px;
+      height: 25px;
+      opacity: 0.6;
+      animation: float3 20s ease-in-out infinite;
+    }
+    
+    .cloud-3::before {
+      width: 40px;
+      height: 40px;
+      top: -20px;
+      left: 10px;
+    }
+    
+    .cloud-3::after {
+      width: 30px;
+      height: 30px;
+      top: -15px;
+      left: 40px;
+    }
+    
+    /* Limited movement animations */
+    @keyframes float1 {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      50% { transform: translateX(30px) translateY(10px); }
+    }
+    
+    @keyframes float2 {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      50% { transform: translateX(-30px) translateY(15px); }
+    }
+    
+    @keyframes float3 {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      50% { transform: translateX(20px) translateY(8px); }
+    }
+
+    /* Inner edge diffusion */
+    .inner-diffusion-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .inner-diffusion-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25%;
+      height: 100%;
+      background: linear-gradient(to left, rgba(255,255,255,0.7), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+    /* Bottom diffusion for borderless effect */
+    .bottom-diffusion {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+  </style>

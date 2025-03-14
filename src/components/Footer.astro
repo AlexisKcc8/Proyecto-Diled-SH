@@ -4,19 +4,19 @@ import ContainerCenter from "./ContainerCenter.astro";
 ---
 
 <footer
-  class="relative text-white flex justify-center items-center px-6 laptop:px-0 overflow-hidden bg-slate-950"
+  class="relative text-white flex justify-center items-center px-6 laptop:px-0 overflow-hidden bg-[#f5f5f7]"
 >
   <div class="absolute top-0 left-0 z-10 h-full w-full">
     <div
-      class="absolute bottom-auto right-auto left-0 top-0 h-[300px] w-[300px] laptop:h-[500px] laptop:w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"
+      class="absolute bottom-auto right-auto left-0 top-0 h-[300px] w-[300px] laptop:h-[500px] laptop:w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-80 blur-[100px]"
     >
     </div>
   </div>
   <ContainerCenter
     class="flex flex-col-reverse laptop:flex-row justify-between py-12"
   >
-    <aside class="flex flex-col gap-8 text-center laptop:text-left">
-      <div class="border-b border-white py-2">
+    <aside class="flex flex-col gap-8 text-center text-black laptop:text-left">
+      <div class="border-b border-s-slate-950 py-2">
         <p class="text-2xl font-bold mb-6">
           Diled - Smart <span class="text-diled-600">Home</span>
         </p>
@@ -27,7 +27,7 @@ import ContainerCenter from "./ContainerCenter.astro";
               target="_blank"
               ><Icon
                 name="facebook"
-                class="text-white w-7 h-7 laptop:w-9 laptop:h-9"
+                class=" w-7 h-7 laptop:w-9 laptop:h-9"
               /></a
             >
             DiLed Smart Home Solutions
@@ -38,7 +38,7 @@ import ContainerCenter from "./ContainerCenter.astro";
               target="_blank"
               ><Icon
                 name="instagram"
-                class="text-white w-7 h-7 laptop:w-9 laptop:h-9"
+                class=" w-7 h-7 laptop:w-9 laptop:h-9"
               /></a
             >
             diLed_smart_home
@@ -47,14 +47,14 @@ import ContainerCenter from "./ContainerCenter.astro";
       </div>
       <div>
         <p class="mb-4">
-          Soluciones IT | <span class="text-diled-300">Smart Homes</span> | Seguridad | <span class="text-diled-300">Automatización Residencial</span>  |
+          Soluciones IT | <span class="text-diled-500">Smart Homes</span> | Seguridad | <span class="text-diled-500">Automatización Residencial</span>  |
           Conectividad.
         </p>
         <p>&copy; {new Date().getFullYear()}. Todos los derechos reservados.</p>
       </div>
     </aside>
     <aside>
-      <section class="flex justify-center laptop:justify-end">
+      <section class="flex justify-center laptop:justify-end text-black">
         <ul class="hidden laptop:flex gap-4 flex-col laptop:flex-row">
           <li class="flex gap-2 items-center z-40">
             <a
@@ -63,7 +63,7 @@ import ContainerCenter from "./ContainerCenter.astro";
               class="flex gap-4 items-center"
               ><Icon
                 name="facebook"
-                class="text-white w-7 h-7 laptop:w-9 laptop:h-9"
+                class=" w-7 h-7 laptop:w-9 laptop:h-9"
               />
               DiLed Smart Home Solutions
             </a>
@@ -75,7 +75,7 @@ import ContainerCenter from "./ContainerCenter.astro";
               class="flex gap-4 items-center"
               ><Icon
                 name="instagram"
-                class="text-white w-7 h-7 laptop:w-9 laptop:h-9"
+                class=" w-7 h-7 laptop:w-9 laptop:h-9"
               />diLed_smart_home</a
             >
           </li>
@@ -83,7 +83,7 @@ import ContainerCenter from "./ContainerCenter.astro";
       </section>
 
       <section
-        class="flex flex-col laptop:items-end laptop:justify-end my-3 text-center"
+        class="flex flex-col laptop:items-end laptop:justify-end my-3 text-center text-black"
       >
         <p class="my-3 text-diled-600 text-xl font-semibold">
           ¡Ven a visitarnos! Estamos en:
@@ -92,10 +92,10 @@ import ContainerCenter from "./ContainerCenter.astro";
           href="https://maps.app.goo.gl/wEu1Vwyz4KnYSPdi6"
           target="_blank"
           class="flex gap-4 items-center laptop:w-[60%] z-40"
-          ><Icon name="maps" class="text-white w-7 h-7 laptop:w-9 laptop:h-9" />
+          ><Icon name="maps" class="w-7 h-7 laptop:w-9 laptop:h-9" />
           <span class="laptop:text-end">
             Calle 1H #176 x 14 y 16, Col. México Norte, Mérida, Yucatan 97128.
-            <br><strong class="text-diled-200">listos para ayudarte.</strong></span
+            <br><strong class="text-diled-500">listos para ayudarte.</strong></span
           >
         </a>
       </section>
