@@ -1,6 +1,6 @@
 ---
 import CardSolution from "./CardSolution.astro";
-
+import { Icon } from "astro-icon/components";
 // Props para hacer el componente reutilizable
 const { projects = [], carouselId } = Astro.props;
 const hasCards = Astro.slots.cards;
@@ -17,11 +17,11 @@ const hasCards = Astro.slots.cards;
   </div>
 
   <!-- Botones de navegación con `data-carousel` -->
-  <button data-prev={carouselId} class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 text-white p-3 rounded-full shadow-lg">
-    ⬅️
+  <button data-prev={carouselId} class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/70 text-white p-3 rounded-full shadow-lg">
+    <Icon name="prev" class="h-8 w-8" /></a>
   </button>
-  <button data-next={carouselId} class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 text-white p-3 rounded-full shadow-lg">
-    ➡️
+  <button data-next={carouselId} class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/70 text-white p-3 rounded-full shadow-lg">
+    <Icon name="next" class="h-8 w-8" /></a>
   </button>
 </section>
 
