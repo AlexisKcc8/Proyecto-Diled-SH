@@ -3,76 +3,140 @@ import ContainerCenter from "@components/ContainerCenter.astro";
 import { Icon } from "astro-icon/components";
 import Brands from "./Brands.astro";
 import { Image } from "astro:assets";
-import image from "@assets/5.svg";
-// class="bg-[url(/src/assets/1.svg)] bg-no-repeat bg-center bg-cover text-white h-screen pt-6 laptop:pt-0 flex items-center justify-center"
+import enchufes from "@assets/enchufes.svg";
+import camaraEntrada from "@assets/camara-entrada.svg";
+import enchufesConCelular from "@assets/enchufes-con-celular.svg";
+import bocina from "@assets/bocina.svg";
+import cuby from "@assets/cuby.svg";
+import hikVision from "@assets/hik-vision.svg";
+import bto from "@assets/bto.svg";
+import { twMerge } from "tailwind-merge";
+let imagesBackground = [
+  // imagenes a la izquierda
+  {
+    url: enchufesConCelular,
+    classContainerImage: " rotate-12",
+  },
 
-// bg-gradient-to-b from-black/0 to-black/80 w-full h-screen justify-center items-center flex
+  {
+    url: cuby,
+    classContainerImage: " -rotate-12",
+  },
+  // imagenes a la derecha
+  {
+    url: camaraEntrada,
+    classContainerImage: " -rotate-12 ",
+  },
+
+  {
+    url: bocina,
+    classContainerImage: " rotate-12",
+  },
+];
 ---
 
-<!-- <div
-  class="bg-gradient-to-b from-diled-violet w-full to-diled-carrot h-screen opacity-70 absolute blur-3xl"
+<section
+  class="relative h-screen w-full bg-[#f5f5f7] text-black flex justify-center items-center overflow-hidden mt-[4rem]"
 >
-</div> -->
-<div class="relative h-full w-full bg-slate-950">
-  <div
-    class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] overflow-hidden rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
-  >
-  </div>
-  <section class="text-white w-full h-screen justify-center">
+  <div class="absolute top-0 z-1 h-full w-full">
     <div
-      class="w-full h-screen justify-center items-center flex backdrop-blur-2xl"
+      class="absolute left-[50%] top-[50%] h-[500px] w-[500px] -translate-x-[50%] -translate-y-[50%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-60 blur-[100px]"
     >
-      <div class="absolute top-12 right-12 -rotate-12">
-        <Image
-          src={image}
-          class="w-44 h-28 object-cover rounded-lg z-0 opacity-20"
-          alt=""
-        />
-        <div
-          class="absolute w-full h-full bottom-0 left-0 bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))] opacity-100 z-10"
-        >
-        </div>
-      </div>
-
-      <ContainerCenter
-        class="flex flex-col justify-center items-center gap-6 laptop:gap-10 px-6 laptop:px-0"
-      >
-        <div
-          class="flex flex-col laptop:flex-row items-center justify-center gap-6 laptop:gap-10"
-        >
-          <section class="flex flex-col gap-6 laptop:gap-10 items-center">
-            <!-- <div
-              class="w-3/4 h-32 laptop:h-32 -rotate-12 laptop:w-96 absolute -z-0 rounded-full blur-3xl bg-gradient-to-r from-diled-carrot to-diled-gray opacity-20 laptop:opacity-35"
-            >
-            </div> -->
-            <h1
-              class="text-3xl laptop:text-6xl prose font-semibold animate-fade-up text-center laptop:max-w-[70%] max-w-[85%]"
-            >
-              Automatización, Seguridad e Iluminación <span
-                class="text-diled-600">Inteligente</span
-              > para tu Hogar
-            </h1>
-            <p
-              class="text-base laptop:text-lg animate-fade-up prose animate-delay-300 text-center max-w-[85%] laptop:max-w-[60%]"
-            >
-              En Diled, transformamos tu hogar con tecnología avanzada en
-              automatización residencial, iluminación, seguridad, audio, cine en
-              casa, conectividad y control de acceso. Disfruta de un hogar más
-              seguro, eficiente y cómodo con soluciones diseñadas para ti.
-            </p>
-
-            <button
-              class="bg-diled-600 w-full laptop:w-1/4 rounded-xl hidden laptop:flex laptop:justify-center laptop:items-center laptop:gap-5 text-white animate-fade-up animate-delay-500 py-4 px-2 text-lg"
-              ><span class="">Transforma tu hogar hoy</span>
-              <Icon name="whatsapp" class="h-8 w-8" /></button
-            >
-          </section>
-        </div>
-      </ContainerCenter>
     </div>
-    <!-- <Brands /> -->
-  </section>
-</div>
+  </div>
+  <div class="absolute w-full h-screen flex laptop:px-32">
+    {/* Columna izquierda */}
+    <div class="flex flex-col justify-around h-full w-1/2 items-start">
+      {
+        imagesBackground
+          .slice(0, Math.ceil(imagesBackground.length / 2))
+          .map((imageBackground, index) => (
+            <div
+              class={twMerge(
+                "w-2/3 h-32 laptop:w-66 laptop:h-48",
+                imageBackground.classContainerImage
+              )}
+              data-aos="fade"
+              data-aos-delay="100"
+            >
+              <Image
+                src={imageBackground.url}
+                class="w-full h-full object-cover rounded-lg opacity-20"
+                alt={`Image-${index}`}
+              />
+            </div>
+          ))
+      }
+    </div>
+
+    {/* Columna derecha */}
+    <div class="flex flex-col justify-between h-full w-1/2 items-end">
+      {
+        imagesBackground
+          .slice(Math.ceil(imagesBackground.length / 2))
+          .map((imageBackground, index) => (
+            <div
+              class={twMerge(
+                "w-2/3 h-32 laptop:w-66 laptop:h-48",
+                imageBackground.classContainerImage
+              )}
+              data-aos="fade"
+              data-aos-delay="100"
+            >
+              <Image
+                src={imageBackground.url}
+                class="w-full h-full object-cover rounded-lg opacity-60"
+                alt={`Image-${index}`}
+              />
+            </div>
+          ))
+      }
+    </div>
+  </div>
+
+  <ContainerCenter
+    class="flex flex-col justify-center items-center gap-6 laptop:gap-10 px-6 laptop:px-0"
+  >
+    <div
+      class="flex flex-col laptop:flex-row items-center justify-center gap-6 laptop:gap-10"
+    >
+      <section class="flex flex-col gap-6 laptop:gap-10 items-center">
+        <h1
+          class="text-4xl laptop:text-5xl prose font-semibold animate-fade-up text-center laptop:max-w-[70%] max-w-[85%] z-10 capitalize"
+        >
+          Soluciones <span class="text-diled-600"
+            >Inteligentes</span
+          >, seguras y eficientes para tu hogar o negocio
+        </h1>
+        <p
+          class="text-[.85rem] text-diled-gray-texts laptop:text-lg animate-fade-up prose animate-delay-300 text-center max-w-[85%] laptop:max-w-[60%]"
+        >
+        Consultoría especializada en TI, somos expertos para evaluar tus necesidades y poder ofrecerte soluciones a tu medida.
+        </p>
+
+       <div class="flex gap-4 w-full justify-center laptop:flex-row flex-col">
+        <a
+        class="bg-diled-600 cursor-pointer laptop:w-1/4 rounded-xl flex gap-1 justify-center items-center z-20 laptop:gap-5 text-white animate-fade-up animate-delay-500 py-4 px-2 " href="https://wa.me/+5219992715345" target="_blank"
+        ><span class="font-semibold text-lg">Contactanos</span>
+        <Icon name="whatsapp" class="h-8 w-8" /></a>
+
+        <a
+        class="border-2 cursor-pointer border-diled-600 laptop:w-1/4 rounded-xl flex gap-1 justify-center items-center z-20 laptop:gap-5 text-diled-600 animate-fade-up animate-delay-500 py-4 px-2" href="#Successful-Solutions"
+        ><span class="font-semibold text-lg">Soluciones de éxito</span>
+        <Icon name="solutions" class="h-8 w-8" /></a>
+
+      <!-- <button
+        class="border-2 cursor-pointer border-diled-600 laptop:w-1/4 rounded-xl flex gap-1 justify-center items-center z-20 laptop:gap-5 text-diled-600 animate-fade-up animate-delay-500 py-4 px-2 "
+        ><span class="font-semibold text-lg">Soluciones de éxito</span>
+        <Icon name="whatsapp" class="h-8 w-8" /></button
+      > -->
+       </div>
+      </section>
+    </div>
+  </ContainerCenter>
+</section>
+
+
 
 <!-- <section class="h-[200px] laptop:h-80 flex flex-col w-full gap-6">
   <div

@@ -1,0 +1,241 @@
+---
+import CardSolution from "@components/CardSolution.astro";
+import Carousel from "@components/Carousel.astro";
+import ContainerCenter from "@components/ContainerCenter.astro";
+import CoverCardSolution from "@components/CoverCardSolution.astro";
+import bgTOWNHOUSES from "@assets/TOWNHOUSES-small.jpeg";
+import bgSCHOOLS from "@assets/school-medium.jpeg";
+import bgAIRBNB from "@assets/AIRBNB.jpeg";
+import bgSMALLBUSINESSES from "@assets/SMALL-BUSINESSES.jpeg";
+import bgOFFICECORPORATE from "@assets/OFFICE-CORPORATE.jpeg";
+import bgRESIDENTIAL from "@assets/RESIDENTIAL.jpeg";
+
+const TOWNHOUSES = [
+  { 
+    image: 'src/assets/bocina.svg', 
+    title: 'Timbre Multiapartamento con control de Acceso Biométricos',
+    description: 'Configuramos y optimizamos sistemas de sonido para una experiencia envolvente.'
+  },
+  { 
+    image: 'src/assets/cuby.svg', 
+    title: 'Videovigilancia CCTV',
+    description: 'Automatizamos la iluminación para mayor confort y eficiencia energética.'
+  },
+  { 
+    image: 'src/assets/background.svg', 
+    title: 'Cerraduras Inteligentes WIFI',
+    description: 'Diseñamos y montamos tu sala de cine para una experiencia inigualable.'
+  },
+  { 
+    image: 'src/assets/background.svg', 
+    title: 'Audio e Iluminacion Inteligente en áreas Sociales',
+    description: 'Diseñamos y montamos tu sala de cine para una experiencia inigualable.'
+  }
+];
+const SCHOOLS  = [
+  { 
+    image: 'src/assets/bto.svg', 
+    title: 'Pantallas Interactivas para Educación',
+    description: 'Instalamos sistemas de seguridad con monitoreo remoto en tiempo real.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: ' Control de Acceso Biométricos',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: ' Conectividad WIFI alta Densidad',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Videovigilancia CCTV',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Ahorro de Energía y Confort de la Iluminación y Climas',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Sonorización de espacios escolares',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  }
+];
+const AIRBNB  = [
+  { 
+    image: 'src/assets/bto.svg', 
+    title: 'Conectividad WIFI 6 MAXIMA VELOCIDAD',
+    description: 'Instalamos sistemas de seguridad con monitoreo remoto en tiempo real.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Timbre con Generación de Códigos Acceso',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Cerraduras Inteligentes WIFI',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Videovigilancia CCTV',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Ahorro de Energía y Confort de la Iluminación y Climas',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  }
+];
+const SMALLBUSINESSES  = [
+  { 
+    image: 'src/assets/bto.svg', 
+    title: 'Conectividad WIFI 6 MAXIMA VELOCIDAD',
+    description: 'Instalamos sistemas de seguridad con monitoreo remoto en tiempo real.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Videovigilancia CC',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Alarma Inalámbrica Automonitoreada',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Ahorro de Energía y Confort de la Iluminación y Climas',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Audio y Video ambiental',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  }
+];
+const OFFICESCORPORATE  = [
+  { 
+    image: 'src/assets/bto.svg', 
+    title: 'Conectividad de Internet con Balanceador, LAN y WIFI',
+    description: 'Instalamos sistemas de seguridad con monitoreo remoto en tiempo real.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'MAXIMA VELOCIDAD con Rack y Site Dedicado',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Pantallas Interactivas para Sala de Juntas',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Videovigilancia CCTV',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Ahorro de Energía y Confort de la Iluminación y Climas',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Audio Ambiental',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  }
+];
+const RESIDENTIAL  = [
+  { 
+    image: 'src/assets/bto.svg', 
+    title: 'Conectividad de Internet WIFI 6 MAXIMA VELOCIDAD ',
+    description: 'Instalamos sistemas de seguridad con monitoreo remoto en tiempo real.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Timbre Videoportero con apertura de Puerta',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Alarma Inalámbrica Automonitoreada',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Videovigilancia CCTV IP',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Control y Confort Smart de la Iluminación, Climas y Cerradura',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Cinema en Casa Dolby Atmos',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  },
+  { 
+    image: 'src/assets/enchufes.svg', 
+    title: 'Audio multizona',
+    description: 'Optimizamos tu red para una conexión estable y rápida en todo tu hogar.'
+  }
+];
+---
+<section class="flex justify-center items-center scroll-mt-20" id="Successful-Solutions">
+  <ContainerCenter class="overflow-hidden flex flex-col items-center justify-center">
+    <h2 class="text-3xl mt-8 mb-8 font-semibold text-center max-w-[80%] 
+    laptop:text-5xl laptop:text-start laptop:w-[100%] laptop:max-w-[100%] ">De la Idea al Logro: <span class="text-diled-600">Soluciones</span><div class="border hidden laptop:block laptop:w-0 laptop:h-0"><br></div>  que Transforman</h2>
+
+    <Carousel carouselId="solutions-TOWNHOUSES">
+      <CoverCardSolution title="TOWNHOUSES" bgImage={bgTOWNHOUSES} />
+      {TOWNHOUSES.map((solution) => (
+        <CardSolution data={solution} />
+      ))}
+    </Carousel>
+    
+    <Carousel carouselId="solutions-SCHOOLS">
+      <CoverCardSolution title="ESCUELAS Y COLEGIOS" bgImage={bgSCHOOLS} />
+      {SCHOOLS.map((solution) => (
+        <CardSolution data={solution} />
+      ))}
+    </Carousel>
+
+    <Carousel carouselId="solutions-AIRBNB">
+      <CoverCardSolution title="AIRBNB" bgImage={bgAIRBNB} />
+      {AIRBNB.map((solution) => (
+        <CardSolution data={solution} />
+      ))}
+    </Carousel>
+
+    <Carousel carouselId="solutions-SMALLBUSINESSES">
+      <CoverCardSolution title="PEQUEÑOS NEGOCIOS" bgImage={bgSMALLBUSINESSES} />
+      {SMALLBUSINESSES.map((solution) => (
+        <CardSolution data={solution} />
+      ))}
+    </Carousel>
+    
+    <Carousel carouselId="solutions-OFFICESCORPORATE">
+      <CoverCardSolution title="OFFICINAS Y CORPORATIVOS" bgImage={bgOFFICECORPORATE} />
+      {OFFICESCORPORATE.map((solution) => (
+        <CardSolution data={solution} />
+      ))}
+    </Carousel>
+    
+    <Carousel carouselId="solutions-RESIDENTIAL">
+      <CoverCardSolution title="RESIDENCIAL" bgImage={bgRESIDENTIAL} />
+      {RESIDENTIAL.map((solution) => (
+        <CardSolution data={solution} />
+      ))}
+    </Carousel>
+    
+  </ContainerCenter>
+</section>
+
+

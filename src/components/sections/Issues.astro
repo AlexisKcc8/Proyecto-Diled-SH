@@ -1,99 +1,116 @@
 ---
 import ContainerCenter from "@components/ContainerCenter.astro";
 
-
-
 const problematics = [
   {
-    titulo: "🏠 ¡Tu casa no es inteligente, es desobediente!",
-    text: "Luces encendidas todo el día, electrodomésticos consumiendo energía sin control… ¿Tu casa trabaja para ti o en tu contra?",
-    urlImg: "/img/automatizacion.png",
-  },
-  {
-    titulo: "💡 Iluminación que arruina el ambiente",
-    text: "Espacios oscuros cuando necesitas luz, reflejos molestos en la pantalla o una iluminación que no se ajusta a tu día… ¿Te suena familiar?",
-    urlImg: "/img/iluminacion.png",
-  },
-  {
-    titulo: "🔐 ¿Tu seguridad depende de la suerte?",
-    text: "Salir de casa con la incertidumbre de si dejaste puertas abiertas o sin saber qué pasa cuando no estás… ¿Qué tan seguro te sientes realmente?",
-    urlImg: "/img/seguridad.png",
-  },
-  {
-    titulo: "🎵 Sonido plano, aburrido y sin vida",
-    text: "Altavoces con sonido pobre, música que se corta o una acústica que no aprovecha el espacio… ¿Tu audio está a la altura de la experiencia que mereces?",
-    urlImg: "/img/audio.png",
-  },
-  {
-    titulo: "🎬 Cine en casa… pero sin la magia",
-    text: "Películas con mala calidad de imagen, sonido que no envuelve y un ambiente que no se siente como un cine… ¿Es realmente una experiencia inmersiva?",
+    titulo: "🎬 ¿Tu cine en casa es una experiencia mágica... o solo una tele más?",
+    text: "Vive la experiencia del cine sin salir de casa. Disfruta sonido envolvente Dolby Atmos y una pantalla de alta resolución con calidad cinematográfica. Siente cómo el audio se mueve a tu alrededor y transforma cada película en algo inolvidable",
+ 
     urlImg: "/img/cinema.png",
   },
   {
-    titulo: "📹 Cámaras que no ven cuando más lo necesitas",
-    text: "Ángulos ciegos, grabaciones de mala calidad o cámaras que fallan justo cuando más las necesitas… ¿Tu sistema de vigilancia es confiable?",
-    urlImg: "/img/cctv.png",
+    titulo: "🔊 ¿Tu música no tiene vida? ¿Quisieras vivir una verdadera experiencia de audio en tu hogar ?",
+    text: "Con un sistema de audio multizona, puedes llevar la experiencia de la música en tu hogar inteligente al siguiente nivel, disfrutando de un control total y una integración perfecta con otros dispositivos.",
+    urlImg: "/img/audio.png",
+   
   },
   {
-    titulo: "📶 Internet que se cae en el peor momento",
-    text: "Zonas sin señal, internet lento en el peor momento o desconexiones constantes… ¿Tu red te está saboteando?",
-    urlImg: "/img/conectividad.png",
+    titulo: "🔐 ¿La seguridad en tu Hogar depende de la Suerte? ",
+    text: "Protege lo que más importa con una solución de seguridad completa: cámaras con audio integrado, alarma automonitoreada y videoportero con control desde cualquier lugar. Todo en una sola app.",
+    urlImg: "/img/seguridad.png",
   },
+  {
+    titulo: "🛜 ¿Internet rápido? Ojalá…",
+    text: "Reuniones que se congelan, WiFi que no llega a todos lados. ¿Te suena conocido?",
+    urlImg: "/img/audio.png",
+  },
+  {
+    titulo: "🏡 Integración y Confort",
+    text: "Convierte tu espacio en un lugar que se adapte a ti. Controla la iluminación, el clima y el sonido con un solo toque y disfruta de la comodidad sin esfuerzo. La tecnología trabaja para ti, para que solo te preocupes por disfrutar. 🚀",
+    urlImg: "/img/automatizacion.png",
+  },
+
 ];
 ---
 
-<section class="relative flex justify-center items-center space-y-10 p-5 laptop:flex-row laptop:space-y-0 laptop:space-x-10">
-  <ContainerCenter class="laptop:flex">
+<section
+  class="relative flex justify-center items-center space-y-10  laptop:flex-row laptop:space-y-0 laptop:space-x-10"
+>
+  <ContainerCenter >
     <!-- Aside con la imagen fija -->
-    <aside
-      class="sticky top-0 left-0 bg-white z-30 p-4 w-full h-[50vh] flex justify-center items-center shadow-lg shadow-[#fff]
-      laptop:h-screen  overflow-hidden"
+     <header class="text-center flex justify-center items-center">
+      <h2
+      class="font-semibold text-3xl my-8 max-w-[90%] laptop:text-5xl"
+      data-aos="fade"
+      data-aos-duration="900"
     >
-      {problematics.map((problematic, index) => (
-        <img
-          src={problematic.urlImg}
-          alt="Problema actual"
-          class={`absolute top-0 left-0 w-full h-full object-cover border
+      Transformamos tu Espacio con <span class="text-diled-600">Tecnología</span
+      >
+      Inteligente
+    </h2>
+     </header>
+
+     <section class="laptop:flex ">
+      <aside
+      class="sticky top-0 left-0 z-30 w-[100%] h-[50vh] flex justify-center items-center
+      laptop:h-screen overflow-hidden drop-shadow-[0_40px_20px_rgba(255,255,255,1)] "
+    >
+      <div class="relative w-full h-full py-8 ">
+        <div
+          class="bg-white from-45% via-80% to-white to-40% w-full h-screen justify-center items-center flex top-0 left-0 z-20 py-4 laptop:hidden"
+        >
+        </div>
+        {
+          problematics.map((problematic, index) => (
+            <img
+              src={problematic.urlImg}
+              alt="Problema actual"
+              class={`absolute top-0 left-0 w-full h-[95%] object-contain 
           laptop:w-full laptop:h-[90vh] laptop:object-contain transition-all duration-700 ease-in-out
           ${index === 0 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          data-index={index}
-        />
-      ))}
+              data-index={index}
+            />
+          ))
+        }
+      </div>
     </aside>
 
     <!-- Sección de problemáticas -->
-    <aside class="space-y-24 p-10 w-full">
-      {problematics.map((problematic) => (
-        <div class="relative">
-          <div
-            class="watched h-64 w-64 bg-gray-200 opacity-0 laptop:absolute top-0 left-0 z-20"
-            data-img={problematic.urlImg}
-          ></div>
+    <aside class="space-y-24 p-2 w-full relative overflow-hidden">
+      {
+        problematics.map((problematic) => (
+          <div class="relative">
+            <div
+              class="watched h-64 w-64 bg-gray-200 opacity-0 laptop:absolute top-0 left-0 z-20"
+              data-img={problematic.urlImg}
+            />
 
-          <div
-            class="z-10 flex flex-col items-center justify-center text-center py-2 px-4   
+            <div
+              class="z-10 flex flex-col p-5 items-center justify-center text-center   
               laptop:h-[90vh] laptop:items-start laptop:text-start"
-          >
-            <h2
-              class="text-3xl font-bold text-diled-600 mb-4 laptop:text-5xl"
-              data-aos="fade"
-              data-aos-duration="500"
             >
-              {problematic.titulo}
-            </h2>
-            <p
-              class="text-diled-gray text-[1rem] prose laptop:text-xl max-w-full border"
-              data-aos="fade"
-              data-aos-duration="500"
-            >
-              {problematic.text}
-            </p>
+              <h2
+                class="text-3xl  font-bold prose mb-4 text-diled-gray laptop:text-4xl"
+                data-aos="fade"
+                data-aos-duration="500"
+              >
+                {problematic.titulo}
+              </h2>
+              <p
+                class="text-diled-gray text-[.85rem] prose laptop:text-[1rem] max-w-full"
+                data-aos="fade"
+                data-aos-duration="500"
+              >
+                {problematic.text}
+              </p>
+            </div>
+            
           </div>
-        </div>
-      ))}
+        ))
+      }
     </aside>
+     </section>
   </ContainerCenter>
-
   <!-- Ejecuta el script en el cliente -->
-  <script src="@scripts/intersectionObserver.ts"></script>
+  <script  src="@scripts/intersectionObserver.ts"></script>
 </section>

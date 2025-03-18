@@ -1,6 +1,89 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
 
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-100-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-100-normal.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-200-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-200-normal.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-300-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-300-normal.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-400-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-400-normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-500-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-500-normal.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-600-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-600-normal.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-700-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-700-normal.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-800-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-800-normal.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/poppins-latin-900-normal.woff2') format('woff2'),
+    url('/fonts/Poppins/poppins-latin-900-normal.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 @theme {
   /* NUESTRA PALETA DE COLORES */
   --color-diled-50: #fffaec;
@@ -17,7 +100,7 @@
   --color-diled-950: #461b04;
   --color-diled-gray-texts: #3c3f4a;
   --color-diled-gray-50: #f0f3f7;
-  --color-diled-gray: #3c3f4a;
+  --color-diled-gray: #24262d;
   --color-diled-violet: #9500b8;
   /* --color-diled-violet: #a00cbc; */
   /* ====================================================================== */
@@ -36,6 +119,7 @@
       opacity: 0;
       transform: translateY(10px);
     }
+
     100% {
       opacity: 0.35;
       transform: translateY(0);
@@ -43,16 +127,182 @@
   }
 }
 
+body {
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Poppins', sans-serif;
+}
+
 .group {
   will-change: transform;
   animation: scrolling 25s linear infinite;
+}
+
+.card-product {
+  /* From https://css.glass */
+  background: #ffffff87;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+  border: 1px solid rgba(255, 255, 255, 0.37);
 }
 
 @keyframes scrolling {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
+}
+
+/* Diffused cloud styling */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  filter: blur(3px);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.cloud-1 {
+  width: 100px;
+  height: 30px;
+  opacity: 0.7;
+  animation: float1 15s ease-in-out infinite;
+}
+
+.cloud-1::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 15px;
+}
+
+.cloud-1::after {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 50px;
+}
+
+.cloud-2 {
+  width: 120px;
+  height: 35px;
+  opacity: 0.65;
+  animation: float2 18s ease-in-out infinite;
+}
+
+.cloud-2::before {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 20px;
+}
+
+.cloud-2::after {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 60px;
+}
+
+.cloud-3 {
+  width: 80px;
+  height: 25px;
+  opacity: 0.6;
+  animation: float3 20s ease-in-out infinite;
+}
+
+.cloud-3::before {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 10px;
+}
+
+.cloud-3::after {
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  left: 40px;
+}
+
+/* Limited movement animations */
+@keyframes float1 {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(30px) translateY(10px);
+  }
+}
+
+@keyframes float2 {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-30px) translateY(15px);
+  }
+}
+
+@keyframes float3 {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(20px) translateY(8px);
+  }
+}
+
+/* Inner edge diffusion */
+.inner-diffusion-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.inner-diffusion-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+/* Bottom diffusion for borderless effect */
+.bottom-diffusion {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  pointer-events: none;
 }

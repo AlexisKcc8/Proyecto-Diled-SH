@@ -5,10 +5,11 @@ import "@styles/global.css";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#020618" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta
@@ -22,11 +23,12 @@ import "@styles/global.css";
     />
   </head>
   <body>
-    <div class="">
+    <div class="relative ">
       <Header />
       <main>
         <slot />
       </main>
+      <!--  -->
       <Footer />
     </div>
   </body>

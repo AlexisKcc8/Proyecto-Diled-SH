@@ -3,7 +3,6 @@ import ContainerCenter from "@components/ContainerCenter.astro";
 import CardReview from "@components/CardReview.astro";
 
 import { Image } from "astro:assets";
-import wave from "@assets/wave-reviews.svg";
 
 const customerReviews = [
   {
@@ -58,22 +57,36 @@ const customerReviews = [
 ---
 
 <section
-  class="w-full min-h-[100vh] overflow-hidden relative text-black bg-diled-gray-50 flex justify-center"
+  class="w-full min-h-[100vh] overflow-hidden relative text-white  flex justify-center pt-14 laptop:pt-26"
 >
-  <div
-    class="absolute top-[-.3rem] left-0 w-full h-[12rem] z-10 laptop:-[-2.5rem]"
-  >
-    <Image src={wave} alt="wave effect" class="h-full w-full object-cover" />
-  </div>
+ <div class="absolute inset-0 bg-gradient-to-b from-sky-200 to-sky-100"></div>
+  <!-- White gradient overlays for diffused effect -->
+  <div class="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-white/40"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-white/20"></div>
+  
+  <!-- Inner edge white diffusion -->
+  <div class="inner-diffusion-left"></div>
+  <div class="inner-diffusion-right"></div>
+      
+  
+  <!-- Diffused clouds positioned at the top corners -->
+  <div class="cloud cloud-1" style="top: 10%; left: 5%;"></div>
+  <div class="cloud cloud-2" style="top: 15%; left: 15%;"></div>
+  <div class="cloud cloud-3" style="top: 8%; left: 25%;"></div>
+      
+  <div class="cloud cloud-2" style="top: 12%; right: 5%;"></div>
+  <div class="cloud cloud-1" style="top: 18%; right: 15%;"></div>
+  <div class="cloud cloud-3" style="top: 6%; right: 25%;"></div>
   <ContainerCenter
-    class="flex flex-col items-center justify-center z-50 text-center py-8 px-6 laptop:px-0"
+    class="flex flex-col items-center justify-center  z-40 text-center py-8 px-6 laptop:px-0"
   >
+ 
     <h2
-      class="font-bold text-[2rem] mb-8"
+      class="font-semibold text-black text-3xl mb-12 laptop:text-5xl"
       data-aos="fade"
       data-aos-duration="900"
     >
-      ¡Estas en una buena <span class="text-diled-carrot">compania</span>!
+      Descubre por qué <span class="text-diled-600">Diled</span> es tu mejor opción para tu proyecto de automatización.
     </h2>
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {customerReviews.map((review) => <CardReview dataReview={review} />)}

@@ -1,104 +1,163 @@
 ---
 import ContainerCenter from "@components/ContainerCenter.astro";
+import { twMerge } from "tailwind-merge";
+import automatizacion from "@assets/video.mp4";
+import iluminacion from "@assets/iluminacion.jpg";
+import seguridad from "@assets/seguridad.jpg";
+import sound from "@assets/sound.jpg";
+import cinema from "@assets/bg-cinema.jpg";
+import cctv from "@assets/cctv-2.jpg";
+import conectividad from "@assets/conectividad-1.jpg";
+import { Image } from "astro:assets";
+
+const servicios = [
+  {
+    titulo: "Automatización Residencial",
+    descripcion:
+      "Convierte tu hogar en un espacio inteligente con control total de iluminación, climatización, persianas y más, desde cualquier lugar.",
+    tipo: "video",
+    fuente: automatizacion as unknown as ImageMetadata,
+    colorTexto: "text-diled-600",
+    dobleColumna: true,
+    justificar: "justify-start",
+    aosDelay: 0,
+    classDescription: "laptop:w-[60%]",
+  },
+  {
+    titulo: "Iluminación",
+    descripcion:
+      "Crea ambientes personalizados con sistemas de iluminación inteligente que mejoran la estética y eficiencia energética de tu hogar o negocio.",
+    tipo: "imagen",
+    fuente: iluminacion as ImageMetadata,
+    colorTexto: "text-amber-600",
+    dobleColumna: false,
+    justificar: "justify-end",
+    aosDelay: 200,
+    grayscale: "grayscale-50",
+  },
+  {
+    titulo: "Seguridad",
+    descripcion:
+      "Protege a tu familia y patrimonio con sistemas de seguridad avanzados, incluyendo alarmas, sensores y control de accesos inteligentes.",
+    tipo: "imagen",
+    fuente: seguridad as ImageMetadata,
+    colorTexto: "text-diled-600",
+    dobleColumna: false,
+    justificar: "justify-end",
+    aosDelay: 0,
+  },
+  {
+    titulo: "Audio",
+    descripcion:
+      "Disfruta de una experiencia sonora envolvente con sistemas de audio multiroom y de alta fidelidad, adaptados a cualquier espacio.",
+    tipo: "imagen",
+    fuente: sound as ImageMetadata,
+    colorTexto: "text-diled-600",
+    dobleColumna: false,
+    justificar: "justify-start",
+    aosDelay: 200,
+  },
+  {
+    titulo: "Cinema",
+    descripcion:
+      "Transforma cualquier habitación en una sala de cine con pantallas de alta definición, sonido envolvente y automatización completa.",
+    tipo: "imagen",
+    fuente: cinema as ImageMetadata,
+    colorTexto: "text-diled-600",
+    dobleColumna: false,
+    justificar: "justify-end",
+    aosDelay: 400,
+    grayscale: "grayscale-50",
+  },
+  {
+    titulo: "CCTV",
+    descripcion:
+      "Vigilancia 24/7 con cámaras de alta resolución y acceso remoto para mantener tu hogar o negocio siempre protegido.",
+    tipo: "imagen",
+    fuente: cctv as ImageMetadata,
+    colorTexto: "text-diled-600",
+    dobleColumna: false,
+    justificar: "justify-end",
+    aosDelay: 0,
+  },
+  {
+    titulo: "Conectividad",
+    descripcion:
+      "Optimiza tu red con soluciones de conectividad avanzadas, asegurando una conexión rápida y estable en todos tus dispositivos.",
+    tipo: "imagen",
+    fuente: conectividad as ImageMetadata,
+    colorTexto: "text-diled-600",
+    dobleColumna: true,
+    justificar: "justify-start",
+    aosDelay: 200,
+    classDescription: "laptop:w-[60%]",
+  },
+];
 ---
 
 <section
-  class="min-h-screen flex items-center justify-center bg-gradient-to-b opacity-90 from-diled-100 to-white px-6 laptop:px-0 py-6"
+  class="min-h-screen flex items-center justify-center px-6 laptop:px-0 py-6"
 >
-  <ContainerCenter class="flex flex-col gap-6 laptop:gap-10">
-    <h2 class="text-2xl laptop:text-3xl text-diled-700 font-semibold">
-      Transformamos tu Espacio con Tecnología Inteligente
+  <ContainerCenter
+    class="flex flex-col justify-center items-center text-center gap-6  laptop:gap-10"
+  >
+    <h2
+      class="font-bold text-xl mb-8"
+      data-aos="fade"
+      data-aos-duration="900"
+    >
+      Transformamos tu Espacio con <span class="text-diled-600">Tecnología</span
+      >
+      Inteligente
     </h2>
-    <div class="grid gap-4">
-      <div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
-        <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center lg:col-span-2 rounded-2xl p-5 gap-4"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-        >
-          <p class="text-xl font-bold">Automatización Residencial</p>
-          <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center lg:col-span-1 rounded-2xl p-5 gap-4"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-          data-aos-delay="200"
-        >
-          <p class="text-xl font-bold">Iluminación</p>
-          <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-      </div>
 
-      <div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
-        <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center rounded-2xl p-5 gap-4"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-        >
-          <p class="text-xl font-bold">Seguridad</p>
-          <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center rounded-2xl p-5 gap-4"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-          data-aos-delay="200"
-        >
-          <p class="text-xl font-bold">Audio</p>
-          <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center rounded-2xl p-5 gap-4"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-          data-aos-delay="400"
-        >
-          <p class="text-xl font-bold">Cinema</p>
-          <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-      </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      {
+        servicios.map((servicio, index) => (
+          <div
+            class={`h-96 flex flex-col items-center z-[40] ${servicio.justificar} ${servicio.dobleColumna ? "lg:col-span-2" : ""} rounded-2xl p-5 gap-4 relative overflow-hidden }`}
+            data-aos="zoom-in"
+            data-aos-duration="300"
+            data-aos-delay={servicio.aosDelay}
+          >
+            {servicio.tipo === "imagen" && (
+              <>
+                <Image
+                  src={servicio.fuente}
+                  alt=""
+                  class={`absolute top-0 left-0 w-full h-full object-cover  ${servicio.grayscale || ""}`}
+                />
+                <div class="absolute top-0 left-0 bg-gradient-to-b from-slate-950/55 to-slate-950/100 w-full h-full justify-center items-center flex" />
+              </>
+            )}
 
-      <div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
-        <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center rounded-2xl p-5 gap-4"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-        >
-          <p class="text-xl font-bold">CCTV</p>
-          <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div
-          class="bg-diled-200 h-96 flex flex-col items-center justify-center lg:col-span-2 rounded-2xl p-5 gap-4"
-          data-aos="zoom-in"
-          data-aos-duration="300"
-          data-aos-delay="200"
-        >
-          <p class="text-xl font-bold">Conectividad</p>
-          <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-      </div>
+            {servicio.tipo === "video" && (
+              <>
+                <div class="absolute top-0 left-0 bg-gradient-to-b from-slate-950/10 to-slate-950/100 w-full h-full justify-center items-center flex" />
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  class="w-full h-full object-cover object-top laptop:object-center fixed -z-10 top-0 left-0 rounded-2xl grayscale-75"
+                >
+                  <source
+                    src={servicio.fuente as unknown as string}
+                    type="video/mp4"
+                  />
+                </video>
+              </>
+            )}
+
+            <p class={`text-xl font-bold ${servicio.colorTexto} z-10`}>
+              {servicio.titulo}
+            </p>
+            <p class={twMerge("text-base z-10", servicio.classDescription)}>
+              {servicio.descripcion}
+            </p>
+          </div>
+        ))
+      }
     </div>
   </ContainerCenter>
 </section>
