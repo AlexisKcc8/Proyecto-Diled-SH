@@ -2,7 +2,15 @@
 const { data = [] } = Astro.props;
 ---
 
-<article class=" max-w-sm mx-auto overflow-hidden bg-[#FAFAFA] snap-center rounded-2xl shadow-lg  card-product ease-in duration-300 w-[22rem] text-center p-0 flex flex-col  flex-shrink-0 border border-gray-300 py-6 hover:cursor-pointer hover:scale-[1.03] hover:ease-in laptop:w-[20rem]">
+<article class=" max-w-sm mx-auto overflow-hidden bg-[#FAFAFA] snap-center rounded-2xl shadow-lg  card-product ease-in duration-300 w-[22rem] text-center p-0 flex flex-col  flex-shrink-0 border border-gray-300 py-6 hover:cursor-pointer laptop:w-[20rem]" 
+
+data-aos="fade"
+data-aos-offset="200"
+data-aos-delay="50"
+data-aos-duration="700"
+data-aos-easing="ease-in"
+      
+>
   <header class="px-2 py-4 h-[5rem] flex items-center justify-center">
     <h2 class="font-semibold text-xl tracking-tight overflow-hidden text-ellipsis whitespace-pre-line line-clamp-3">
       {data.title}

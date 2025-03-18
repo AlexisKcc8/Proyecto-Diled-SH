@@ -3,7 +3,12 @@ import CardSolution from "@components/CardSolution.astro";
 import Carousel from "@components/Carousel.astro";
 import ContainerCenter from "@components/ContainerCenter.astro";
 import CoverCardSolution from "@components/CoverCardSolution.astro";
-
+import bgTOWNHOUSES from "@assets/TOWNHOUSES-small.jpeg";
+import bgSCHOOLS from "@assets/school-medium.jpeg";
+import bgAIRBNB from "@assets/AIRBNB.jpeg";
+import bgSMALLBUSINESSES from "@assets/SMALL-BUSINESSES.jpeg";
+import bgOFFICECORPORATE from "@assets/OFFICE-CORPORATE.jpeg";
+import bgRESIDENTIAL from "@assets/RESIDENTIAL.jpeg";
 
 const TOWNHOUSES = [
   { 
@@ -27,7 +32,6 @@ const TOWNHOUSES = [
     description: 'Diseñamos y montamos tu sala de cine para una experiencia inigualable.'
   }
 ];
-
 const SCHOOLS  = [
   { 
     image: 'src/assets/bto.svg', 
@@ -190,42 +194,42 @@ const RESIDENTIAL  = [
     laptop:text-5xl laptop:text-start laptop:w-[100%] laptop:max-w-[100%] ">De la Idea al Logro: <span class="text-diled-600">Soluciones</span><div class="border hidden laptop:block laptop:w-0 laptop:h-0"><br></div>  que Transforman</h2>
 
     <Carousel carouselId="solutions-TOWNHOUSES">
-      <CoverCardSolution title="TOWNHOUSES" bgImage="/src/assets/TOWNHOUSES-small.jpeg" />
+      <CoverCardSolution title="TOWNHOUSES" bgImage={bgTOWNHOUSES} />
       {TOWNHOUSES.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
     
     <Carousel carouselId="solutions-SCHOOLS">
-      <CoverCardSolution title="ESCUELAS Y COLEGIOS" bgImage="/src/assets/school-medium.jpeg" />
+      <CoverCardSolution title="ESCUELAS Y COLEGIOS" bgImage={bgSCHOOLS} />
       {SCHOOLS.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
 
     <Carousel carouselId="solutions-AIRBNB">
-      <CoverCardSolution title="AIRBNB" bgImage="/src/assets/AIRBNB.jpeg" />
+      <CoverCardSolution title="AIRBNB" bgImage={bgAIRBNB} />
       {AIRBNB.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
 
     <Carousel carouselId="solutions-SMALLBUSINESSES">
-      <CoverCardSolution title="PEQUEÑOS NEGOCIOS" bgImage="/src/assets/SMALL-BUSINESSES.jpeg" />
+      <CoverCardSolution title="PEQUEÑOS NEGOCIOS" bgImage={bgSMALLBUSINESSES} />
       {SMALLBUSINESSES.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
     
     <Carousel carouselId="solutions-OFFICESCORPORATE">
-      <CoverCardSolution title="OFFICINAS Y CORPORATIVOS" bgImage="/src/assets/OFFICE-CORPORATE.jpeg" />
+      <CoverCardSolution title="OFFICINAS Y CORPORATIVOS" bgImage={bgOFFICECORPORATE} />
       {OFFICESCORPORATE.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
     
     <Carousel carouselId="solutions-RESIDENTIAL">
-      <CoverCardSolution title="RESIDENCIAL" bgImage="/src/assets/RESIDENTIAL.jpeg" />
+      <CoverCardSolution title="RESIDENCIAL" bgImage={bgRESIDENTIAL} />
       {RESIDENTIAL.map((solution) => (
         <CardSolution data={solution} />
       ))}
