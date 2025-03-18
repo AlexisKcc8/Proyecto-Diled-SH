@@ -1,0 +1,50 @@
+---
+import ContainerCenter from "@components/ContainerCenter.astro";
+  const client="Jorge Pérez";
+  const position="Manager AIRBNB";
+  const avatar="/logo-diled.png";
+  const review="¡Mi hogar ahora es inteligente! Control total de iluminación, seguridad y entretenimiento con un solo toque. ¡Increíble servicio!";
+---
+<section class="min-h-screen bg-white flex items-center justify-center">
+  <ContainerCenter class="relative w-full  h-[90vh] rounded-2xl overflow-hidden">
+     <!-- Sky background with gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-sky-300 to-sky-100"></div>
+    
+      <!-- White gradient overlays for diffused effect -->
+      <div class="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-white/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-white/20"></div>
+      
+      <!-- Inner edge white diffusion -->
+      <div class="inner-diffusion-left"></div>
+      <div class="inner-diffusion-right"></div>
+      
+      <!-- Bottom diffusion for borderless effect -->
+      <div class="bottom-diffusion"></div>
+      <!-- Diffused clouds positioned at the top corners -->
+      <div class="cloud cloud-1" style="top: 10%; left: 5%;"></div>
+      <div class="cloud cloud-2" style="top: 15%; left: 15%;"></div>
+      <div class="cloud cloud-3" style="top: 8%; left: 25%;"></div>
+      
+      <div class="cloud cloud-2" style="top: 12%; right: 5%;"></div>
+      <div class="cloud cloud-1" style="top: 18%; right: 15%;"></div>
+      <div class="cloud cloud-3" style="top: 6%; right: 25%;"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 h-full flex items-center justify-center laptop:justify-start laptop:pl-28 ">
+        <div class=" text-start p-6 px-8 laptop:w-[70%]">
+          <p class="text-2xl prose drop-shadow-md mb-8 font-medium laptop:text-[40px]">¡Mi hogar ahora es inteligente! Control total de iluminación, seguridad y <span class="text-blue-600">entretenimiento con un solo toque. ¡Increíble servicio!</span></p>
+          <div class="flex items-center mt-auto">
+            <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border border-[#ff7a00] ">
+              <img
+                src={avatar || "/placeholder.svg"}
+                alt={`Avatar de ${client}`}
+                class="w-full h-full object-cover"/>
+            </div>
+            <div class="ml-3 text-start">
+              <h4 class="text-[1rem] font-medium text-black">{client}</h4>
+              <p class="text-[.8rem] text-diled-gray-texts">{position}</p>
+            </div>
+          </div>
+        </div>
+  </ContainerCenter>
+</section>

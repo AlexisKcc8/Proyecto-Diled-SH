@@ -36,11 +36,11 @@ let imagesBackground = [
 ---
 
 <section
-  class="relative h-screen w-full bg-slate-950 text-white flex justify-center items-center overflow-hidden mt-[4rem]"
+  class="relative h-screen w-full bg-[#f5f5f7] text-black flex justify-center items-center overflow-hidden mt-[4rem]"
 >
   <div class="absolute top-0 z-1 h-full w-full">
     <div
-      class="absolute left-[50%] top-[50%] h-[500px] w-[500px] -translate-x-[50%] -translate-y-[50%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-40 blur-[100px]"
+      class="absolute left-[50%] top-[50%] h-[500px] w-[500px] -translate-x-[50%] -translate-y-[50%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-60 blur-[100px]"
     >
     </div>
   </div>
@@ -85,7 +85,7 @@ let imagesBackground = [
             >
               <Image
                 src={imageBackground.url}
-                class="w-full h-full object-cover rounded-lg opacity-20"
+                class="w-full h-full object-cover rounded-lg opacity-60"
                 alt={`Image-${index}`}
               />
             </div>
@@ -109,7 +109,7 @@ let imagesBackground = [
           >, seguras y eficientes para tu hogar o negocio
         </h1>
         <p
-          class="text-[.8rem] text-diled-100 laptop:text-lg animate-fade-up prose animate-delay-300 text-center max-w-[85%] laptop:max-w-[60%]"
+          class="text-[.85rem] text-diled-gray-texts laptop:text-lg animate-fade-up prose animate-delay-300 text-center max-w-[85%] laptop:max-w-[60%]"
         >
         Consultoría especializada en TI, somos expertos para evaluar tus necesidades y poder ofrecerte soluciones a tu medida.
         </p>
@@ -120,10 +120,15 @@ let imagesBackground = [
         ><span class="font-semibold text-lg">Contactanos</span>
         <Icon name="whatsapp" class="h-8 w-8" /></a>
 
-      <button
-        class="border-2 border-white laptop:w-1/4 rounded-xl flex gap-1 justify-center items-center laptop:gap-5 text-white animate-fade-up animate-delay-500 py-4 px-2 "
+        <a
+        class="border-2 cursor-pointer border-diled-600 laptop:w-1/4 rounded-xl flex gap-1 justify-center items-center z-20 laptop:gap-5 text-diled-600 animate-fade-up animate-delay-500 py-4 px-2" href="#Successful-Solutions"
         ><span class="font-semibold text-lg">Soluciones de éxito</span>
-        <!-- <Icon name="whatsapp" class="h-8 w-8" /></button
+        <Icon name="solutions" class="h-8 w-8" /></a>
+
+      <!-- <button
+        class="border-2 cursor-pointer border-diled-600 laptop:w-1/4 rounded-xl flex gap-1 justify-center items-center z-20 laptop:gap-5 text-diled-600 animate-fade-up animate-delay-500 py-4 px-2 "
+        ><span class="font-semibold text-lg">Soluciones de éxito</span>
+        <Icon name="whatsapp" class="h-8 w-8" /></button
       > -->
        </div>
       </section>
