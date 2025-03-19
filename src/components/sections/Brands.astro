@@ -4,19 +4,14 @@ import { Icon } from "astro-icon/components";
 const icons = ["bose", "lutron", "sonos", "denon", "klipsch"];
 ---
 
-<div
-  class="flex items-center w-full justify-center px-6 laptop:px-0 "
->
-  <ContainerCenter class="flex w-full h-fit rounded-xl">
-    <div class="overflow-hidden flex">
+<div class="flex items-center w-full justify-center px-6 laptop:px-0">
+  <ContainerCenter class="flex w-full h-fit rounded-xl justify-center">
+    <div class="overflow-hidden flex w-full">
       <div class="flex gap-5 pr-5 group flex-[0_0_100%]">
         {
           icons.map((icon) => (
             <div class="w-full justify-center items-center">
-              <Icon
-                name={icon}
-                class="h-24 w-24  text-diled-gray/70"
-              />
+              <Icon name={icon} class="h-24 w-24  text-diled-gray/70" />
             </div>
           ))
         }
@@ -25,10 +20,7 @@ const icons = ["bose", "lutron", "sonos", "denon", "klipsch"];
         {
           icons.map((icon) => (
             <div class="w-full justify-center items-center">
-              <Icon
-                name={icon}
-                class="h-24 w-24  text-diled-gray/70"
-              />
+              <Icon name={icon} class="h-24 w-24  text-diled-gray/70" />
             </div>
           ))
         }
