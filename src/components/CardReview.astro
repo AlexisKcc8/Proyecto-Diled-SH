@@ -1,12 +1,12 @@
 ---
 import { twMerge } from "tailwind-merge";
-
+import { Image } from "astro:assets";
 const { dataReview } = Astro.props;
 ---
 
 <div
   class:list={twMerge(
-    "flex flex-col h-full text-white rounded-[1.5rem] bg-sky-100/80 backdrop-blur-xl p-6 border border-white/60 shadow-[0_8px_32px_rgba(180,210,255,0.4)] relative overflow-hidden",
+    "flex flex-col h-full text-white rounded-[1.5rem] bg-sky-100/80 p-6 border border-white/60 shadow-[0_8px_32px_rgba(180,210,255,0.4)] relative overflow-hidden laptop:backdrop-blur-sm ",
     dataReview.rotation ? dataReview.rotation : ""
   )}
   data-aos="fade-up"
@@ -25,7 +25,7 @@ const { dataReview } = Astro.props;
   {/* Avatar y usuario */}
   <div class="flex items-center mt-auto relative z-10">
     <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-sky-200 shadow-[0_4px_12px_rgba(180,210,255,0.5)]">
-      <img
+      <Image
         src={dataReview.avatar || "/placeholder.svg"}
         alt={`Avatar de ${dataReview.name}`}
         class="w-full h-full object-cover"
