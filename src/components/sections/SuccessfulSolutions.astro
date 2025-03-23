@@ -189,47 +189,48 @@ const RESIDENTIAL  = [
 ];
 ---
 <section class="flex justify-center items-center scroll-mt-20" id="Successful-Solutions">
-  <ContainerCenter class="overflow-hidden flex flex-col items-center justify-center">
+  <ContainerCenter class="overflow-hidden flex flex-col items-center justify-center snap-y snap-mandatory">
+
     <h2 class="text-3xl mt-8 mb-8 font-semibold text-center max-w-[80%] 
     laptop:text-5xl laptop:text-start laptop:w-[100%] laptop:max-w-[100%] ">De la Idea al Logro: <span class="text-diled-600">Soluciones</span><div class="border hidden laptop:block laptop:w-0 laptop:h-0"><br></div>  que Transforman</h2>
 
-    <Carousel carouselId="solutions-TOWNHOUSES">
-      <CoverCardSolution title="TOWNHOUSES" bgImage={bgTOWNHOUSES} />
+    <Carousel carouselId="solutions-TOWNHOUSES" class="">
+      <CoverCardSolution title="TOWNHOUSES" subtitle="Seguridad, confort y tecnología en un solo lugar." bgImage={bgTOWNHOUSES} />
       {TOWNHOUSES.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
     
-    <Carousel carouselId="solutions-SCHOOLS">
-      <CoverCardSolution title="ESCUELAS Y COLEGIOS" bgImage={bgSCHOOLS} />
+    <Carousel carouselId="solutions-SCHOOLS" class="snap-center">
+      <CoverCardSolution title="ESCUELAS Y COLEGIOS" subtitle="Tecnología que mejora la experiencia escolar." bgImage={bgSCHOOLS} />
       {SCHOOLS.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
 
-    <Carousel carouselId="solutions-AIRBNB">
-      <CoverCardSolution title="AIRBNB" bgImage={bgAIRBNB} />
+    <Carousel carouselId="solutions-AIRBNB" >
+      <CoverCardSolution title="AIRBNB" subtitle="Experiencias automatizadas, huéspedes encantados." bgImage={bgAIRBNB} />
       {AIRBNB.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
 
     <Carousel carouselId="solutions-SMALLBUSINESSES">
-      <CoverCardSolution title="PEQUEÑOS NEGOCIOS" bgImage={bgSMALLBUSINESSES} />
+      <CoverCardSolution title="PEQUEÑOS NEGOCIOS" subtitle="Automatización fácil y accesible para tu emprendimiento." bgImage={bgSMALLBUSINESSES} />
       {SMALLBUSINESSES.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
     
     <Carousel carouselId="solutions-OFFICESCORPORATE">
-      <CoverCardSolution title="OFFICINAS Y CORPORATIVOS" bgImage={bgOFFICECORPORATE} />
+      <CoverCardSolution title="OFFICINAS Y CORPORATIVOS" subtitle="Un ambiente de trabajo más inteligente y confortable." bgImage={bgOFFICECORPORATE} />
       {OFFICESCORPORATE.map((solution) => (
         <CardSolution data={solution} />
       ))}
     </Carousel>
     
     <Carousel carouselId="solutions-RESIDENTIAL">
-      <CoverCardSolution title="RESIDENCIAL" bgImage={bgRESIDENTIAL} />
+      <CoverCardSolution title="RESIDENCIAL" subtitle="Un hogar conectado, una experiencia sin preocupaciones." bgImage={bgRESIDENTIAL} />
       {RESIDENTIAL.map((solution) => (
         <CardSolution data={solution} />
       ))}
@@ -237,5 +238,4 @@ const RESIDENTIAL  = [
     
   </ContainerCenter>
 </section>
-
 

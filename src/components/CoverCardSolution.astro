@@ -1,11 +1,11 @@
 ---
   import { Image } from "astro:assets";
-  const { title, bgImage } = Astro.props;
+  const { title, subtitle,bgImage } = Astro.props;
 ---
 
-<article class="w-[22rem] max-w-sm mx-auto overflow-hidden snap-center rounded-2xl shadow-lg   relative ease-in duration-300  text-center p-0 flex flex-col  flex-shrink-0 border border-gray-300  hover:cursor-pointer hover:scale-[1.03] hover:ease-in laptop:w-[20rem]" 
+<article class="w-[22rem] max-w-sm mx-auto overflow-hidden snap-center rounded-2xl shadow-[10px_0_30px_15px_rgba(255,255,255,0.8)] relative ease-in duration-300  text-center p-0 flex flex-col  flex-shrink-0 hover:cursor-pointer hover:ease-in laptop:w-[30rem] laptop:sticky laptop:top-0 laptop:left-0 laptop:z-10" 
 data-aos="fade"
-data-aos-offset="200"
+data-aos-offset="150"
 data-aos-delay="50"
 data-aos-duration="700"
 data-aos-easing="ease-in"
@@ -15,9 +15,10 @@ data-aos-easing="ease-in"
     class="w-full h-full object-cover rounded-lg"
     alt={`Image-${title}`}
   />
-  <header class="absolute top-0 left-0 w-full  bg-white/50  px-2 py-4 flex  justify-center">
+  <header class="absolute top-0 left-0 w-full  bg-white/60  px-2 py-4 flex flex-col justify-center">
     <h2 class="font-bold text-3xl  tracking-tight overflow-hidden text-ellipsis whitespace-pre-line line-clamp-3">
       {title}
     </h2>
+    <p>{subtitle}</p>
   </header>
 </article>

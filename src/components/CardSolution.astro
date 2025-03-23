@@ -2,7 +2,7 @@
 const { data = [] } = Astro.props;
 ---
 
-<article class=" max-w-sm mx-auto overflow-hidden bg-[#FAFAFA] snap-center rounded-2xl shadow-lg  card-product ease-in duration-300 w-[22rem] text-center p-0 flex flex-col  flex-shrink-0 border border-gray-300 py-6 hover:cursor-pointer laptop:w-[20rem]" 
+<article class=" max-w-sm mx-auto overflow-hidden bg-[#FAFAFA] snap-center rounded-2xl shadow-lg  card-product ease-in duration-300 w-[22rem] text-center p-0 flex flex-col  flex-shrink-0 border border-gray-300 py-6 hover:cursor-pointer laptop:w-[30rem]" 
 
 data-aos="fade"
 data-aos-offset="200"
@@ -17,7 +17,7 @@ data-aos-easing="ease-in"
     </h2>
   </header>
   <section class="px-2 flex-1">
-    <div class="w-full aspect-[5/6] relative overflow-hidden bg-gray-100">
+    <div class="w-full aspect-[5/6] relative overflow-hidden ">
       <img
         src={data.image}
         alt={`Image-${data.title}`}
@@ -25,10 +25,10 @@ data-aos-easing="ease-in"
                 
       />
     </div>
-    <footer class="my-4">
+    <!-- <footer class="my-4">
       <p class="">
           {data.description}
       </p>
-    </footer>
+    </footer> -->
   </section>
 </article>
