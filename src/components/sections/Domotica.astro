@@ -1,0 +1,172 @@
+---
+import ContainerCenter from "@components/ContainerCenter.astro";
+import { twMerge } from "tailwind-merge";
+import automatizacion from "@assets/video.mp4";
+import ahorro from "@assets/iluminacion.png";
+import tecnico from "@assets/soporte.png";
+import funcionando from "@assets/funcionando.png";
+import temperatura from "@assets/temperatura2.png";
+import phone from "@assets/phone.png";
+import monitoreo from "@assets/monitoreo.png";
+import future from "@assets/future.png";
+import { Image } from "astro:assets";
+
+const servicios = [
+  {
+    titulo: "Eficiencia automática para ahorrar sin esfuerzo",
+    descripcion:
+      "Optimiza el consumo de energía y reduce tus facturas sin darte cuenta. Tus luces, clima y electrodomésticos se ajustan solos para gastar solo lo necesario.",
+    tipo: "imagen",
+    fuente: ahorro as ImageMetadata,
+    aosDelay: 0,
+    classDescription: "laptop:w-[60%]",
+    classService:"justify-start lg:col-span-2 bg-gradient-to-b from-sky-600 to-[#dfe8ff]",
+    classTitle:"laptop:text-2xl",
+    classText:"text-white",
+    cloudPotition: "bottom",
+  },
+  {
+    titulo: "Soluciones sin complicaciones",
+    descripcion:
+      "No solo instalamos, también te acompañamos. Con soporte técnico especializado, todo funciona como debe sin complicaciones.",
+    tipo: "imagen",
+    fuente: tecnico as ImageMetadata,
+    aosDelay: 200,
+    grayscale: "grayscale-50",
+    classService:" justify-end flex-col-reverse",
+    cloudPotition: "top",
+  },
+  {
+    titulo: "Siempre funcionando al 100%",
+    descripcion:
+      "Protege a tu familia y patrimonio con sistemas de seguridad avanzados, incluyendo alarmas, sensores y control de accesos inteligentes.",
+    tipo: "imagen",
+    fuente: funcionando as ImageMetadata,
+    aosDelay: 0,
+    classService:"justify-end flex-col-reverse",
+    cloudPotition: "top",
+  },
+  {
+    titulo: "Temperatura ideal todo el año",
+    descripcion:
+      "Olvídate de ajustar el aire acondicionado o la calefacción. Tu hogar o negocio aprende tus preferencias y mantiene el clima perfecto automáticamente.",
+    tipo: "imagen",
+    fuente: temperatura as ImageMetadata,
+    aosDelay: 200,
+    classService:"justify-start",
+    cloudPotition: "bottom",
+  },
+  {
+    titulo: "Comodidad en tu bolsillo",
+    descripcion:
+      "Desde una app puedes encender luces, ajustar el clima, ver tus cámaras de seguridad y mucho más, estés donde estés.",
+    tipo: "imagen",
+    fuente: phone as ImageMetadata,
+    aosDelay: 400,
+    classService:"justify-end flex-col-reverse ",
+    cloudPotition: "top",
+  },
+  {
+    titulo: "Monitoreo en tiempo real",
+    descripcion:
+      "Vigila tu casa, oficina o negocio en cualquier momento y recibe alertas de seguridad en tu celular al instante.",
+    tipo: "imagen",
+    fuente: monitoreo as ImageMetadata,
+    aosDelay: 0,
+    classService:"justify-end flex-col-reverse",
+    cloudPotition: "top",
+  },
+  {
+    titulo: "Vive el futuro hoy",
+    descripcion:
+      "La tecnología hace tu vida más fácil, segura y eficiente. Dale un upgrade a tu hogar o negocio con la automatización.",
+    tipo: "imagen",
+    fuente: future as ImageMetadata,
+    aosDelay: 200,
+    classDescription: "laptop:w-[60%]",
+    classService:" justify-start lg:col-span-2",
+    cloudPotition: "bottom",
+  },
+];
+---
+
+<section
+  class="min-h-screen flex items-center justify-center px-6 laptop:px-0 py-6"
+>
+  <ContainerCenter
+    class="flex flex-col justify-center items-center text-center gap-6  laptop:gap-10 laptop:items-start"
+  >
+    <h2
+      class="text-3xl mt-8 mb-8 font-semibold text-center max-w-[100%] 
+      laptop:text-5xl laptop:text-start laptop:w-[100%] laptop:max-w-[70%] prose leading-tight"
+      data-aos="fade"
+      data-aos-duration="900"
+    >
+      Domótica de otro nivel: gestiona tu hogar con un solo toque, mide su eficiencia y disfruta de la <span class="text-diled-600">comodidad sin límites.</span>
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+      {
+        servicios.map((servicio, index) => (
+          <div
+            class={twMerge("flex flex-col items-center z-[40] rounded-2xl pt-6 relative overflow-hidden flex-shrink-0 bg-[#dfe8ff] h-[25rem]", servicio.classService)}
+            data-aos="zoom-in"
+            data-aos-duration="300"
+            data-aos-delay={servicio.aosDelay}
+          >
+            <div class="cloud cloud-1" style={`${servicio.cloudPotition}: 10%; left: 5%;`}></div>
+            <div class="cloud cloud-2 " style={`${servicio.cloudPotition}: 15%; left: 15%;`}></div>
+            <div class="cloud cloud-3" style={`${servicio.cloudPotition}: 8%; left: 25%;`}></div>
+            
+            <div class="cloud cloud-2" style={`${servicio.cloudPotition}: 12%; right: 5%;`}></div>
+            <div class="cloud cloud-1" style={`${servicio.cloudPotition}: 18%; right: 15%;`}></div>
+            <div class="cloud cloud-3" style={`${servicio.cloudPotition}: 6%; right: 25%;`}></div>
+            
+
+            {/* {servicio.tipo === "video" && (
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  class="w-[70%] h-[70%] object-cover -z-10"
+                >
+                  <source
+                    src={servicio.fuente as unknown as string}
+                    type="video/mp4"
+                  />
+                </video>
+            )} */}
+
+            
+            <div class="flex w-full flex-col items-center justify-center my-0 p-4  h-[30%] S">
+              <h3 class={twMerge("text-xl font-semibold text-[#00154f] z-10 mb-2 ", servicio.classText, servicio.classTitle)}>
+                {servicio.titulo}
+              </h3>
+              <p class={twMerge("text-[.7rem] z-10 text-diled-gray-texts mb-4", servicio.classDescription, servicio.classText)}>
+                {servicio.descripcion}
+              </p>
+            </div>
+            <div class="px-2 flex-1 h-[70%]">
+              {servicio.tipo === "imagen" && (
+              <div class="w-full h-full  relative overflow-hidden ">
+                <Image
+                  class="w-full h-full object-cover rounded-lg z-10 my-0"
+                  src={servicio.fuente}
+                  alt=""
+                />
+              </div>
+              
+            )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </ContainerCenter>
+</section>
+
+<script>
+  import { initAOS } from "@scripts/aos";
+  initAOS();
+</script>
