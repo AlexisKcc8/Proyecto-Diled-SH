@@ -20,9 +20,10 @@ const servicios = [
     fuente: ahorro as ImageMetadata,
     aosDelay: 0,
     classDescription: "laptop:w-[60%]",
-    classService:"justify-start lg:col-span-2 bg-gradient-to-b from-sky-600 to-[#dfe8ff]",
-    classTitle:"laptop:text-2xl",
-    classText:"text-white",
+    classService:
+      "justify-start lg:col-span-2 bg-gradient-to-b from-sky-600 to-[#dfe8ff]",
+    classTitle: "laptop:text-2xl",
+    classText: "text-white",
     cloudPotition: "bottom",
   },
   {
@@ -33,7 +34,7 @@ const servicios = [
     fuente: tecnico as ImageMetadata,
     aosDelay: 200,
     grayscale: "grayscale-50",
-    classService:" justify-end flex-col-reverse",
+    classService: " justify-end flex-col-reverse",
     cloudPotition: "top",
   },
   {
@@ -43,7 +44,7 @@ const servicios = [
     tipo: "imagen",
     fuente: funcionando as ImageMetadata,
     aosDelay: 0,
-    classService:"justify-end flex-col-reverse",
+    classService: "justify-end flex-col-reverse",
     cloudPotition: "top",
   },
   {
@@ -53,7 +54,7 @@ const servicios = [
     tipo: "imagen",
     fuente: temperatura as ImageMetadata,
     aosDelay: 200,
-    classService:"justify-start",
+    classService: "justify-start",
     cloudPotition: "bottom",
   },
   {
@@ -63,7 +64,7 @@ const servicios = [
     tipo: "imagen",
     fuente: phone as ImageMetadata,
     aosDelay: 400,
-    classService:"justify-end flex-col-reverse ",
+    classService: "justify-end flex-col-reverse ",
     cloudPotition: "top",
   },
   {
@@ -73,7 +74,7 @@ const servicios = [
     tipo: "imagen",
     fuente: monitoreo as ImageMetadata,
     aosDelay: 0,
-    classService:"justify-end flex-col-reverse",
+    classService: "justify-end flex-col-reverse",
     cloudPotition: "top",
   },
   {
@@ -84,7 +85,7 @@ const servicios = [
     fuente: future as ImageMetadata,
     aosDelay: 200,
     classDescription: "laptop:w-[60%]",
-    classService:" justify-start lg:col-span-2",
+    classService: " justify-start lg:col-span-2",
     cloudPotition: "bottom",
   },
 ];
@@ -94,34 +95,57 @@ const servicios = [
   class="min-h-screen flex items-center justify-center px-6 laptop:px-0 py-6"
 >
   <ContainerCenter
-    class="flex flex-col justify-center items-center text-center gap-6  laptop:gap-10 laptop:items-start"
+    class="flex flex-col justify-center items-center text-center gap-6 laptop:gap-10 laptop:items-start"
   >
     <h2
-      class="text-3xl mt-8 mb-8 font-semibold text-center max-w-[100%] 
+      class="text-3xl mt-8 mb-8 font-semibold text-center max-w-[100%]
       laptop:text-5xl laptop:text-start laptop:w-[100%] laptop:max-w-[70%] prose leading-tight"
       data-aos="fade"
       data-aos-duration="900"
     >
-      Domótica de otro nivel: gestiona tu hogar con un solo toque, mide su eficiencia y disfruta de la <span class="text-diled-600">comodidad sin límites.</span>
+      Domótica de otro nivel: gestiona tu hogar con un solo toque, mide su
+      eficiencia y disfruta de la <span class="text-diled-600"
+        >comodidad sin límites.</span
+      >
     </h2>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       {
         servicios.map((servicio, index) => (
           <div
-            class={twMerge("flex flex-col items-center z-[40] rounded-2xl pt-6 relative overflow-hidden flex-shrink-0 bg-[#dfe8ff] h-[25rem]", servicio.classService)}
+            class={twMerge(
+              "flex flex-col items-center z-[40] rounded-2xl pt-6 relative overflow-hidden flex-shrink-0 bg-[#dfe8ff] h-[25rem]",
+              servicio.classService
+            )}
             data-aos="zoom-in"
             data-aos-duration="300"
             data-aos-delay={servicio.aosDelay}
           >
-            <div class="cloud cloud-1" style={`${servicio.cloudPotition}: 10%; left: 5%;`}></div>
-            <div class="cloud cloud-2 " style={`${servicio.cloudPotition}: 15%; left: 15%;`}></div>
-            <div class="cloud cloud-3" style={`${servicio.cloudPotition}: 8%; left: 25%;`}></div>
-            
-            <div class="cloud cloud-2" style={`${servicio.cloudPotition}: 12%; right: 5%;`}></div>
-            <div class="cloud cloud-1" style={`${servicio.cloudPotition}: 18%; right: 15%;`}></div>
-            <div class="cloud cloud-3" style={`${servicio.cloudPotition}: 6%; right: 25%;`}></div>
-            
+            <div
+              class="cloud cloud-1"
+              style={`${servicio.cloudPotition}: 10%; left: 5%;`}
+            />
+            <div
+              class="cloud cloud-2 "
+              style={`${servicio.cloudPotition}: 15%; left: 15%;`}
+            />
+            <div
+              class="cloud cloud-3"
+              style={`${servicio.cloudPotition}: 8%; left: 25%;`}
+            />
+
+            <div
+              class="cloud cloud-2"
+              style={`${servicio.cloudPotition}: 12%; right: 5%;`}
+            />
+            <div
+              class="cloud cloud-1"
+              style={`${servicio.cloudPotition}: 18%; right: 15%;`}
+            />
+            <div
+              class="cloud cloud-3"
+              style={`${servicio.cloudPotition}: 6%; right: 25%;`}
+            />
 
             {/* {servicio.tipo === "video" && (
                 <video
@@ -138,26 +162,36 @@ const servicios = [
                 </video>
             )} */}
 
-            
             <div class="flex w-full flex-col items-center justify-center my-0 p-4  h-[30%] S">
-              <h3 class={twMerge("text-xl font-semibold text-[#00154f] z-10 mb-2 ", servicio.classText, servicio.classTitle)}>
+              <h3
+                class={twMerge(
+                  "text-xl font-semibold text-[#00154f] z-10 mb-2 ",
+                  servicio.classText,
+                  servicio.classTitle
+                )}
+              >
                 {servicio.titulo}
               </h3>
-              <p class={twMerge("text-[.7rem] z-10 text-diled-gray-texts mb-4", servicio.classDescription, servicio.classText)}>
+              <p
+                class={twMerge(
+                  "text-[.7rem] z-10 text-diled-gray-texts mb-4",
+                  servicio.classDescription,
+                  servicio.classText
+                )}
+              >
                 {servicio.descripcion}
               </p>
             </div>
             <div class="px-2 flex-1 h-[70%]">
               {servicio.tipo === "imagen" && (
-              <div class="w-full h-full  relative overflow-hidden ">
-                <Image
-                  class="w-full h-full object-cover rounded-lg z-10 my-0"
-                  src={servicio.fuente}
-                  alt=""
-                />
-              </div>
-              
-            )}
+                <div class="w-full h-full  relative overflow-hidden ">
+                  <Image
+                    class="w-full h-full object-cover rounded-lg z-10 my-0"
+                    src={servicio.fuente}
+                    alt=""
+                  />
+                </div>
+              )}
             </div>
           </div>
         ))
